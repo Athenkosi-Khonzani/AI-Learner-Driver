@@ -143,9 +143,19 @@ python scripts/run_rdt.py --simulate
 | **Primary evidence** | Planning success, command validity, latency, cost, replays | Task outcomes, rover trajectories, timing, video, logs, scoring |
 | **Code** | [Separate benchmark repository](https://github.com/Athenkosi-Khonzani/AI-Learner-Driver-LLM-Tests) | [`rdt_experiment/`](./rdt_experiment/) |
 
-## Scope and related software
+## Other project repositories
 
-This repository focuses on **host software and experimental tooling**. It is not a complete snapshot of every hardware design, embedded-firmware component, raw recording, or large experimental archive used in the project. The rover's embedded control software is maintained separately.
+This repository serves as the central hub for the desktop host and experimental tools, but other parts of the AI Learner Rover Driver are maintained in separate GitHub repositories:
+
+| Repository | Contents |
+| --- | --- |
+| **[AI Learner CV Pipeline](https://github.com/Athenkosi-Khonzani/KHNATH002-CV-Tests)** | Source code for the overhead computer-vision pipeline, including camera calibration, rover localisation, and coloured-block detection. The marker-height correction developed for the integrated evaluation is included under Experiment 2 in this repository. |
+| **[AI Learner Rover Firmware](https://github.com/Athenkosi-Khonzani/AI-Rover-Firmware-Test)** | Embedded rover software, including STM32 motion control and its UART interface, plus the ESP32 communication gateway. |
+| **[AI Learner PCB Shield](https://github.com/Athenkosi-Khonzani/Acebott_Shield_Version_A)** | KiCad design project and fabrication files for the Design 1 motor-control shield. |
+
+The **[LLM Planning Tests (Experiment 1)](https://github.com/Athenkosi-Khonzani/AI-Learner-Driver-LLM-Tests)** are also maintained separately, as described above.
+
+Large raw recordings and experimental ZIP archives are intentionally excluded from this repository. For implementation details or build instructions, consult the README in the relevant component repository.
 
 ## Author
 
@@ -156,4 +166,3 @@ University of Cape Town (UCT)
 ---
 
 *For component-specific setup and implementation details, start with the [Host README](./ai_learner_host/README.md), the [RDT README](./rdt_experiment/README.md), or the [LLM Tests repository](https://github.com/Athenkosi-Khonzani/AI-Learner-Driver-LLM-Tests).*
-

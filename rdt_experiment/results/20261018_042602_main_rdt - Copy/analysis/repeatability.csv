@@ -1,9 +1,0 @@
-task,runs,max_spread_of_first_pass_end_mm
-RDT-01,3,15
-RDT-02,3,26
-RDT-03,3,22
-RDT-04,3,16
-RDT-05,3,179
-RDT-06,3,92
-RDT-07,4,124
-RDT-08,3,36

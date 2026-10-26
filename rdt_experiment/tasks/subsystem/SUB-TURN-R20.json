@@ -1,0 +1,37 @@
+{
+  "task_id": "SUB-TURN-R20",
+  "title": "Turn right 20 deg",
+  "family": "subsystem",
+  "difficulty": 1,
+  "instruction": "[fixed plan, no LLM] Turn right 20 deg",
+  "arena_mm": [
+    1710.0,
+    1254.0
+  ],
+  "start_pose": {
+    "x_mm": 855,
+    "y_mm": 627,
+    "heading_deg": 0
+  },
+  "blocks": [],
+  "goal": {
+    "type": "absolute",
+    "x_mm": 855,
+    "y_mm": 627,
+    "position_tolerance_mm": 50,
+    "require_heading": true,
+    "target_heading_deg": 20,
+    "heading_tolerance_deg": 10
+  },
+  "notes": "Small turn. Past host runs suggest turns of about 25 deg were sometimes not executed; this checks it.",
+  "fixed_plan": [
+    {
+      "op": "TURN",
+      "value": 20
+    },
+    {
+      "op": "STOP",
+      "value": null
+    }
+  ]
+}

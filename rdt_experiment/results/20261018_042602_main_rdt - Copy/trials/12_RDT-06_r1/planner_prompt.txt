@@ -1,0 +1,181 @@
+SYSTEM:
+You are the high-level motion planner for the AI Learner Rover Driver.
+
+Plan a short, safe, executable path from the supplied user instruction and structured world state.
+Use only the supplied information. Do not use tools, web search, or outside knowledge.
+
+ROVER PHYSICAL FOOTPRINT:
+- Length / front-to-back: 155.5 mm.
+- Width / left-to-right: 121.3 mm.
+- Plan for the FULL rectangular rover body, not only the rover centre.
+- Keep the full footprint inside the arena and clear of every obstacle.
+- Where geometry allows, preserve approximately 150 mm of extra clearance beyond the rover body.
+
+COORDINATE FRAME:
+- Arena origin is the bottom-left corner.
+- +X points right; +Y points up.
+- Heading 0° points +Y/up.
+- Heading 90° points +X/right.
+- Heading 180° points down.
+- Heading 270° points left.
+
+ROVER COMMAND SEMANTICS:
+- FWD: move forward by the supplied distance in millimetres.
+- BACK: move backward by the supplied distance in millimetres.
+- TURN: in-place signed rotation in degrees; positive = right/clockwise, negative = left/anticlockwise.
+- STOP: terminal path marker with no value.
+
+HOST SAFETY / PROTOCOL LIMITS:
+- Maximum 12 commands total, including STOP.
+- FWD must be >0 and <= 2000 mm.
+- BACK must be >0 and <= 1000 mm.
+- TURN magnitude must be >0 and <= 180°.
+- STOP must appear exactly once and must be the final command.
+- The host assigns the path id and transport metadata. Never invent them.
+- Prefer a simple route, but safety and task completion take priority over shortest distance.
+
+Return only the structured command-plan response required by the API schema. Do not add explanations.
+
+USER INSTRUCTION:
+Drive to coordinate (1450 mm, 1000 mm) while avoiding all three blocks, then stop.
+
+WORLD STATE JSON:
+{
+  "arena": {
+    "height_mm": 1254.0,
+    "width_mm": 1710.0
+  },
+  "coordinate_frame": {
+    "heading": {
+      "0_deg": "+Y/up",
+      "180_deg": "-Y/down",
+      "270_deg": "-X/left",
+      "90_deg": "+X/right"
+    },
+    "origin": "arena_bottom_left",
+    "units": "mm",
+    "x_axis": "right",
+    "y_axis": "up"
+  },
+  "obstacles": [
+    {
+      "centre_mm": {
+        "x": 604.4,
+        "y": 388.7
+      },
+      "colour": "red",
+      "id": "red_block_01",
+      "orientation_deg": 85.7,
+      "polygon_mm": [
+        {
+          "x": 692.9,
+          "y": 250.6
+        },
+        {
+          "x": 495.9,
+          "y": 258.5
+        },
+        {
+          "x": 515.8,
+          "y": 526.9
+        },
+        {
+          "x": 712.9,
+          "y": 519.0
+        }
+      ],
+      "size_mm": {
+        "long_side": 269.1,
+        "short_side": 197.2
+      },
+      "type": "coloured_block"
+    },
+    {
+      "centre_mm": {
+        "x": 943.2,
+        "y": 856.7
+      },
+      "colour": "green",
+      "id": "green_block_01",
+      "orientation_deg": 90.0,
+      "polygon_mm": [
+        {
+          "x": 1042.4,
+          "y": 724.3
+        },
+        {
+          "x": 843.9,
+          "y": 724.3
+        },
+        {
+          "x": 843.9,
+          "y": 989.1
+        },
+        {
+          "x": 1042.4,
+          "y": 989.1
+        }
+      ],
+      "size_mm": {
+        "long_side": 264.9,
+        "short_side": 198.6
+      },
+      "type": "coloured_block"
+    },
+    {
+      "centre_mm": {
+        "x": 1242.6,
+        "y": 437.4
+      },
+      "colour": "blue",
+      "id": "blue_block_01",
+      "orientation_deg": 88.8,
+      "polygon_mm": [
+        {
+          "x": 1338.8,
+          "y": 303.3
+        },
+        {
+          "x": 1140.9,
+          "y": 305.5
+        },
+        {
+          "x": 1146.4,
+          "y": 571.5
+        },
+        {
+          "x": 1344.3,
+          "y": 569.3
+        }
+      ],
+      "size_mm": {
+        "long_side": 266.1,
+        "short_side": 197.8
+      },
+      "type": "coloured_block"
+    }
+  ],
+  "perception": {
+    "block_count": 3,
+    "rover_marker_dictionary": "DICT_4X4_50",
+    "rover_marker_id": 29
+  },
+  "rover": {
+    "age_s": 0.0,
+    "available": true,
+    "confidence": 0.867,
+    "footprint_mm": {
+      "length": 155.5,
+      "width": 121.3
+    },
+    "pose": {
+      "heading_deg": 359.8,
+      "x_mm": 245.6,
+      "y_mm": 232.0
+    },
+    "pose_valid": true,
+    "stale": false
+  },
+  "schema": "ai_learner_world_state",
+  "schema_version": "1.0"
+}

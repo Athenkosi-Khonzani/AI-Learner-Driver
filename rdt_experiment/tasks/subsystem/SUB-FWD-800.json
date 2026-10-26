@@ -1,0 +1,37 @@
+{
+  "task_id": "SUB-FWD-800",
+  "title": "Straight 800 mm",
+  "family": "subsystem",
+  "difficulty": 1,
+  "instruction": "[fixed plan, no LLM] Straight 800 mm",
+  "arena_mm": [
+    1710.0,
+    1254.0
+  ],
+  "start_pose": {
+    "x_mm": 400,
+    "y_mm": 200,
+    "heading_deg": 0
+  },
+  "blocks": [],
+  "goal": {
+    "type": "absolute",
+    "x_mm": 400,
+    "y_mm": 1000,
+    "position_tolerance_mm": 50,
+    "require_heading": true,
+    "target_heading_deg": 0,
+    "heading_tolerance_deg": 10
+  },
+  "notes": "Subsystem verification (T3 to T5): executes a fixed plan so the physical-minus-replay error is pure execution error.",
+  "fixed_plan": [
+    {
+      "op": "FWD",
+      "value": 800
+    },
+    {
+      "op": "STOP",
+      "value": null
+    }
+  ]
+}

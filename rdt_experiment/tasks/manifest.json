@@ -1,0 +1,84 @@
+{
+  "set": "main",
+  "locked": true,
+  "locked_on": "2026-10-18",
+  "rover_footprint_mm": [
+    155.5,
+    121.3
+  ],
+  "rule": "Hidden goals and reference paths are never sent to the planner.",
+  "tasks": [
+    {
+      "id": "RDT-01",
+      "file": "RDT-01.json",
+      "family": "basic_motion",
+      "difficulty": 1,
+      "title": "Straight metric translation",
+      "reference_path_mm": 600.0,
+      "sha256": "5fa376dbda9085d237d9b4dc7b31b3f0c0b2e11b66ed53539d46643c0033e023"
+    },
+    {
+      "id": "RDT-02",
+      "file": "RDT-02.json",
+      "family": "basic_motion",
+      "difficulty": 1,
+      "title": "Turn followed by translation",
+      "reference_path_mm": 800.0,
+      "sha256": "693e8bceabebbcd76395cb9779f6a7f24965f6fb694195144beac116802c7f14"
+    },
+    {
+      "id": "RDT-03",
+      "file": "RDT-03.json",
+      "family": "coordinate_navigation",
+      "difficulty": 2,
+      "title": "Drive to a coordinate",
+      "reference_path_mm": 1248.5,
+      "sha256": "204c023c793a0ee14c9547671dd753e9cd08b40f85a6d4908eb672cc15eb1151"
+    },
+    {
+      "id": "RDT-04",
+      "file": "RDT-04.json",
+      "family": "object_target",
+      "difficulty": 2,
+      "title": "Stop at a position relative to a block",
+      "reference_path_mm": 812.1,
+      "sha256": "32ac8a8c16fb60d65a9f42afbcd71b71b8e1da74b35cb3f483eeece8fda94a36"
+    },
+    {
+      "id": "RDT-05",
+      "file": "RDT-05.json",
+      "family": "single_obstacle",
+      "difficulty": 2,
+      "title": "Detour around one obstacle",
+      "reference_path_mm": 1304.3,
+      "sha256": "26359261d0e71af0111c8be98025195ee62b188d2b34c6022238a78a5a491193"
+    },
+    {
+      "id": "RDT-06",
+      "file": "RDT-06.json",
+      "family": "multi_obstacle",
+      "difficulty": 3,
+      "title": "Route through several obstacles",
+      "reference_path_mm": 1783.9,
+      "sha256": "e27cbc213db9372234c72b9a7814d3671e1b75479131f4412b575103ac6c6544"
+    },
+    {
+      "id": "RDT-07",
+      "file": "RDT-07.json",
+      "family": "tight_boundary",
+      "difficulty": 3,
+      "title": "Tight clearance between blocks",
+      "reference_path_mm": 1118.7,
+      "sha256": "8992815f30db056350e472fd2e765ca170aaac7624660a4012a305484eb6024b"
+    },
+    {
+      "id": "RDT-08",
+      "file": "RDT-08.json",
+      "family": "coordinate_navigation",
+      "difficulty": 3,
+      "title": "Combined route with a final heading",
+      "reference_path_mm": 1427.8,
+      "sha256": "a399a9c810dd3bdaa0c2b255078d0dc67cd3c7f7091b825ca09ada29c2456a06"
+    }
+  ]
+}

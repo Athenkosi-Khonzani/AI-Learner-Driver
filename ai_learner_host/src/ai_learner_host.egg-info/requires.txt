@@ -1,0 +1,10 @@
+PySide6<7,>=6.7
+qasync<1,>=0.27
+websockets<17,>=12
+opencv-contrib-python<5,>=4.10
+numpy<3,>=1.26
+pydantic<3,>=2.8
+openai<3,>=2
+anthropic<2,>=1
+google-genai<3,>=2
+sounddevice<1,>=0.5

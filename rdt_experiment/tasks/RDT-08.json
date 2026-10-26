@@ -1,0 +1,36 @@
+{
+  "task_id": "RDT-08",
+  "title": "Combined route with a final heading",
+  "family": "coordinate_navigation",
+  "difficulty": 3,
+  "instruction": "Drive to coordinate (1400 mm, 300 mm) while avoiding the yellow block, then turn to face north and stop.",
+  "start_pose": {
+    "x_mm": 300,
+    "y_mm": 950,
+    "heading_deg": 180
+  },
+  "blocks": [
+    {
+      "colour": "yellow",
+      "x_mm": 855,
+      "y_mm": 500,
+      "length_mm": 280.0,
+      "breadth_mm": 200.0,
+      "orientation_deg": 0
+    }
+  ],
+  "goal": {
+    "type": "absolute",
+    "x_mm": 1400,
+    "y_mm": 300,
+    "position_tolerance_mm": 60,
+    "require_heading": true,
+    "target_heading_deg": 0,
+    "heading_tolerance_deg": 10
+  },
+  "arena_mm": [
+    1710.0,
+    1254.0
+  ],
+  "notes": ""
+}

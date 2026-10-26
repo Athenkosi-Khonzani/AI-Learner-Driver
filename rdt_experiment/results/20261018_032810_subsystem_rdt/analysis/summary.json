@@ -1,0 +1,40 @@
+{
+  "session": "rdt",
+  "mode": "subsystem",
+  "trials": 8,
+  "void_trials": 0,
+  "first_pass": "8/8 (100%, 68-100%)",
+  "closed_loop": null,
+  "replay": "8/8 (100%, 68-100%)",
+  "mcnemar": {
+    "replay_ok_rover_ok": 8,
+    "replay_ok_rover_fail": 0,
+    "replay_fail_rover_ok": 0,
+    "replay_fail_rover_fail": 0,
+    "discordant": 0,
+    "exact_mcnemar_p": 1.0
+  },
+  "failure_classes": {},
+  "verifier_agreement": "8/8",
+  "camera_minus_tape_mm": {
+    "n": 4,
+    "median": 5.699999999999999,
+    "max": 7.9
+  },
+  "timing": {
+    "planning_latency_s_median": 0.0,
+    "drive_time_first_pass_s_median": 2.355,
+    "mission_time_s_median": 15.125
+  },
+  "experiment1_gpt6sol_family_success": {
+    "basic_motion": 1.0,
+    "coordinate_navigation": 1.0,
+    "multi_obstacle": 1.0,
+    "object_target": 1.0,
+    "single_obstacle": 1.0,
+    "tight_boundary": 1.0
+  },
+  "notes": [
+    "NOTE: this session used an unlocked task manifest (rehearsal data)."
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "task_id": "RDT-03",
+  "title": "Drive to a coordinate",
+  "family": "coordinate_navigation",
+  "difficulty": 2,
+  "instruction": "Drive to coordinate (1300 mm, 900 mm) and stop there.",
+  "start_pose": {
+    "x_mm": 300,
+    "y_mm": 300,
+    "heading_deg": 0
+  },
+  "blocks": [],
+  "goal": {
+    "type": "absolute",
+    "x_mm": 1300,
+    "y_mm": 900,
+    "position_tolerance_mm": 60,
+    "require_heading": false,
+    "target_heading_deg": 0.0,
+    "heading_tolerance_deg": 10.0
+  },
+  "arena_mm": [
+    1710.0,
+    1254.0
+  ],
+  "notes": ""
+}

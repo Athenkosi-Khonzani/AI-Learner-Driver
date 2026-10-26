@@ -1,0 +1,40 @@
+{
+  "session": "rdt",
+  "mode": "main",
+  "trials": 26,
+  "void_trials": 0,
+  "first_pass": "17/26 (65%, 46-81%)",
+  "closed_loop": "25/26 (96%, 81-99%)",
+  "replay": "26/26 (100%, 87-100%)",
+  "mcnemar": {
+    "replay_ok_rover_ok": 17,
+    "replay_ok_rover_fail": 9,
+    "replay_fail_rover_ok": 0,
+    "replay_fail_rover_fail": 0,
+    "discordant": 9,
+    "exact_mcnemar_p": 0.0039
+  },
+  "failure_classes": {
+    "execution": 9
+  },
+  "verifier_agreement": "34/36",
+  "camera_minus_tape_mm": {
+    "n": 0,
+    "median": null,
+    "max": null
+  },
+  "timing": {
+    "planning_latency_s_median": 5.508,
+    "drive_time_first_pass_s_median": 15.005,
+    "mission_time_s_median": 33.33
+  },
+  "experiment1_gpt6sol_family_success": {
+    "basic_motion": 1.0,
+    "coordinate_navigation": 1.0,
+    "multi_obstacle": 1.0,
+    "object_target": 1.0,
+    "single_obstacle": 1.0,
+    "tight_boundary": 1.0
+  },
+  "notes": []
+}

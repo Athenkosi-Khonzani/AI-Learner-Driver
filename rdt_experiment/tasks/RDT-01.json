@@ -1,0 +1,27 @@
+{
+  "task_id": "RDT-01",
+  "title": "Straight metric translation",
+  "family": "basic_motion",
+  "difficulty": 1,
+  "instruction": "Move forward 600 mm and stop.",
+  "start_pose": {
+    "x_mm": 400,
+    "y_mm": 250,
+    "heading_deg": 0
+  },
+  "blocks": [],
+  "goal": {
+    "type": "absolute",
+    "x_mm": 400,
+    "y_mm": 850,
+    "position_tolerance_mm": 50,
+    "require_heading": false,
+    "target_heading_deg": 0.0,
+    "heading_tolerance_deg": 10.0
+  },
+  "arena_mm": [
+    1710.0,
+    1254.0
+  ],
+  "notes": ""
+}

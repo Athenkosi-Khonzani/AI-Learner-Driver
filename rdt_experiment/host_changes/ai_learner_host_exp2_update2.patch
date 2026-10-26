@@ -1,0 +1,264 @@
+diff --git a/ai_learner_host/src/ai_learner_host/application/mission_controller.py b/ai_learner_host/src/ai_learner_host/application/mission_controller.py
+index f0ecfeb..a54f237 100644
+--- a/ai_learner_host/src/ai_learner_host/application/mission_controller.py
++++ b/ai_learner_host/src/ai_learner_host/application/mission_controller.py
+@@ -61,6 +61,10 @@ class MissionController:
+         self.pending_plan: ValidatedPlan | None = None
+         self._mission_lock = asyncio.Lock()
+         self._manual_path_id: int | None = None
++        # Every path sent in the current mission, with how much of it was executed.
++        # The verifier is given all of it, because it compares the mission's
++        # original before-state with the latest after-state.
++        self._executed_rounds: list[dict] = []
+         self._subscribe_events()
+ 
+     def _subscribe_events(self) -> None:
+@@ -87,6 +91,7 @@ class MissionController:
+             self.current_run = run
+             self.current_plan = None
+             self.pending_plan = None
++            self._executed_rounds = []
+             await self.repository.create_run(run)
+             await self.refresh_recent_runs()
+             self.state_store.update(
+@@ -184,6 +189,7 @@ class MissionController:
+             return
+         self.current_plan = plan
+         self.current_run.current_path_id = plan.path_id
++        self._executed_rounds.append({"plan": plan, "completed": False, "last_acked": -1})
+         self.execution.start(plan)
+         self._set_state(MissionState.SENDING_PATH)
+         await self.rover.send_path(plan)
+@@ -199,6 +205,9 @@ class MissionController:
+         if not self.current_run or event.path_id != self.current_run.current_path_id:
+             return
+         self.execution.command_ack(event.path_id, event.command_index)
++        for entry in self._executed_rounds:
++            if entry["plan"].path_id == event.path_id:
++                entry["last_acked"] = max(entry["last_acked"], event.command_index)
+         self.current_run.current_command_index = event.command_index
+         self.state_store.update(current_command_index=event.command_index)
+         await self.repository.save_command_ack(self.current_run.run_id, event.path_id, event.command_index)
+@@ -214,6 +223,9 @@ class MissionController:
+         if not self.current_run or event.path_id != self.current_run.current_path_id:
+             return
+         self.execution.path_ack(event.path_id)
++        for entry in self._executed_rounds:
++            if entry["plan"].path_id == event.path_id:
++                entry["completed"] = True
+         self._log_ui(f"ack path {event.path_id}")
+         asyncio.create_task(self._verify_after_path(), name="mission-verification")
+ 
+@@ -234,7 +246,7 @@ class MissionController:
+                 self.current_run.prompt,
+                 self.initial_world,
+                 after,
+-                self.current_plan,
++                self.cumulative_executed_plan(),
+             )
+             await self.repository.save_verification(
+                 self.current_run.run_id, self.current_run.correction_round, result
+@@ -391,6 +403,28 @@ class MissionController:
+         await self.refresh_recent_runs()
+         # Keep the completed run visible in the UI, but it is no longer active.
+ 
++    def cumulative_executed_plan(self) -> ValidatedPlan:
++        """Everything the rover executed in this mission, as one plan ending in STOP.
++
++        Completed paths contribute all their motion commands; a path that was
++        stopped part-way (NACK) contributes only the commands it acknowledged.
++        """
++        commands: list[DriveCommand] = []
++        for entry in self._executed_rounds:
++            plan_cmds = [c for c in entry["plan"].commands if c.op != "STOP"]
++            if not entry["completed"]:
++                plan_cmds = [c for i, c in enumerate(entry["plan"].commands)
++                             if c.op != "STOP" and i <= entry["last_acked"]]
++            commands.extend(plan_cmds)
++        commands.append(DriveCommand("STOP"))
++        last = self._executed_rounds[-1]["plan"] if self._executed_rounds else self.current_plan
++        return ValidatedPlan(
++            path_id=last.path_id if last else 0,
++            commands=commands,
++            source="cumulative",
++            revision=last.revision if last else 0,
++        )
++
+     def _set_state(self, state: MissionState) -> None:
+         if self.current_run:
+             self.current_run.state = state
+diff --git a/ai_learner_host/src/ai_learner_host/config.py b/ai_learner_host/src/ai_learner_host/config.py
+index e502ae1..142bf91 100644
+--- a/ai_learner_host/src/ai_learner_host/config.py
++++ b/ai_learner_host/src/ai_learner_host/config.py
+@@ -117,6 +117,18 @@ class AppConfig:
+     rover_centre_forward_mm: float = 63.0
+     rover_heading_offset_deg: float = 0.0
+ 
++    # Marker height parallax. The arena homography maps the floor plane, but
++    # the ArUco marker sits above the floor, so the camera sees it displaced
++    # radially away from the point directly below the camera (the nadir) by
++    # the factor H / (H - h). With both heights > 0 the measured marker centre
++    # p is corrected to n + (p - n) * (H - h) / H before the marker-to-centre
++    # offset is applied. Headings are unaffected (uniform scaling about a
++    # point preserves directions). 0 disables the correction.
++    parallax_camera_height_mm: float = 0.0
++    parallax_marker_height_mm: float = 0.0
++    parallax_nadir_x_mm: float = 0.0
++    parallax_nadir_y_mm: float = 0.0
++
+     # Camera-verified turn handshake.
+     #
+     # A heading request must never be answered from the cached frame that was
+diff --git a/ai_learner_host/src/ai_learner_host/perception/service.py b/ai_learner_host/src/ai_learner_host/perception/service.py
+index 71f5f8d..413a31d 100644
+--- a/ai_learner_host/src/ai_learner_host/perception/service.py
++++ b/ai_learner_host/src/ai_learner_host/perception/service.py
+@@ -741,6 +741,22 @@ class PerceptionService:
+             dtype=np.float64,
+         )
+ 
++    def correct_marker_parallax(self, point_mm: np.ndarray) -> np.ndarray:
++        """Map a marker point measured on the floor plane to its true floor position.
++
++        See AppConfig.parallax_*: p_true = n + (p - n) * (H - h) / H.
++        Returns the point unchanged when the correction is disabled.
++        """
++        H = float(self.config.parallax_camera_height_mm)
++        h = float(self.config.parallax_marker_height_mm)
++        if H <= 0.0 or h <= 0.0 or h >= H:
++            return np.asarray(point_mm, dtype=np.float64)
++        nadir = np.asarray(
++            [self.config.parallax_nadir_x_mm, self.config.parallax_nadir_y_mm],
++            dtype=np.float64,
++        )
++        return nadir + (np.asarray(point_mm, dtype=np.float64) - nadir) * (H - h) / H
++
+     def _transform_world(self, points: np.ndarray) -> np.ndarray:
+         h = np.asarray(self.config.calibration.homography, dtype=np.float64)
+         src = np.asarray(points, dtype=np.float32).reshape(-1, 1, 2)
+@@ -762,7 +778,7 @@ class PerceptionService:
+         ) % 360.0
+ 
+         centre_px = self._line_intersection(corners[0], corners[2], corners[1], corners[3])
+-        marker_world = self._transform_world(centre_px.reshape(1, 2))[0]
++        marker_world = self.correct_marker_parallax(self._transform_world(centre_px.reshape(1, 2))[0])
+ 
+         theta = math.radians(heading)
+         forward = np.asarray([math.sin(theta), math.cos(theta)])
+diff --git a/ai_learner_host/tests/test_parallax.py b/ai_learner_host/tests/test_parallax.py
+new file mode 100644
+index 0000000..433a26a
+--- /dev/null
++++ b/ai_learner_host/tests/test_parallax.py
+@@ -0,0 +1,46 @@
++import math
++import unittest
++
++import numpy as np
++
++from ai_learner_host.camera.frame_buffer import FrameBuffer
++from ai_learner_host.config import AppConfig
++from ai_learner_host.perception.service import PerceptionService
++
++
++class MarkerParallaxTests(unittest.TestCase):
++    def service(self, H=0.0, h=0.0, nx=0.0, ny=0.0):
++        cfg = AppConfig()
++        cfg.parallax_camera_height_mm = H
++        cfg.parallax_marker_height_mm = h
++        cfg.parallax_nadir_x_mm = nx
++        cfg.parallax_nadir_y_mm = ny
++        return PerceptionService(FrameBuffer(), cfg)
++
++    def test_disabled_by_default(self):
++        p = np.array([900.0, 600.0])
++        np.testing.assert_allclose(self.service().correct_marker_parallax(p), p)
++
++    def test_inverts_the_projection_of_a_raised_marker(self):
++        H, h, n = 1590.0, 55.0, np.array([1032.0, -828.0])
++        svc = self.service(H, h, *n)
++        for true in ([300.0, 250.0], [855.0, 627.0], [1400.0, 1000.0]):
++            true = np.array(true)
++            seen = n + (true - n) * H / (H - h)  # what the floor homography reports
++            np.testing.assert_allclose(svc.correct_marker_parallax(seen), true, atol=1e-9)
++
++    def test_magnitude_matches_tape_readings(self):
++        # Tape (1482, 798) was reported by the camera as (1502, 864) before the correction.
++        svc = self.service(1549.6, 55.0, 1032.0, -828.0)
++        corrected = svc.correct_marker_parallax(np.array([1502.0, 864.0]))
++        self.assertLess(math.dist(corrected, (1482.0, 798.0)), 10.0)
++
++    def test_scaling_preserves_direction(self):
++        svc = self.service(1590.0, 55.0, 1000.0, -800.0)
++        a = svc.correct_marker_parallax(np.array([400.0, 300.0]))
++        b = svc.correct_marker_parallax(np.array([400.0, 900.0]))
++        self.assertAlmostEqual(a[0], b[0], places=6)  # a north-pointing segment stays north-pointing
++
++
++if __name__ == "__main__":
++    unittest.main()
+diff --git a/ai_learner_host/tests/test_verifier_cumulative_plan.py b/ai_learner_host/tests/test_verifier_cumulative_plan.py
+new file mode 100644
+index 0000000..a683168
+--- /dev/null
++++ b/ai_learner_host/tests/test_verifier_cumulative_plan.py
+@@ -0,0 +1,58 @@
++import unittest
++
++from ai_learner_host.application.event_bus import EventBus
++from ai_learner_host.application.mission_controller import MissionController
++from ai_learner_host.application.state_store import AppStateStore
++from ai_learner_host.config import AppConfig
++from ai_learner_host.domain.events import CommandAckEvent
++from ai_learner_host.domain.models import DriveCommand, MissionRun, ValidatedPlan
++from ai_learner_host.rover.execution_tracker import ExecutionTracker
++
++
++class _Repo:
++    async def save_command_ack(self, *a):
++        pass
++
++
++class CumulativePlanTests(unittest.IsolatedAsyncioTestCase):
++    def controller(self):
++        mc = MissionController(
++            config=AppConfig(), event_bus=EventBus(), state_store=AppStateStore(), planner=None,
++            perception=None, validator=None, verifier=None, rover=None,
++            execution=ExecutionTracker(), repository=_Repo(),
++        )
++        mc.current_run = MissionRun(prompt="x")
++        mc._verify_after_path = lambda: None  # not under test here
++        return mc
++
++    def plan(self, pid, *cmds):
++        return ValidatedPlan(pid, [DriveCommand(op, v) for op, v in cmds] + [DriveCommand("STOP")])
++
++    async def test_correction_round_sees_both_plans(self):
++        mc = self.controller()
++        first = self.plan(1, ("TURN", 90), ("FWD", 1105))
++        mc._executed_rounds.append({"plan": first, "completed": True, "last_acked": 2})
++        correction = self.plan(2, ("FWD", 89))
++        mc._executed_rounds.append({"plan": correction, "completed": True, "last_acked": 1})
++        cmds = [(c.op, c.value) for c in mc.cumulative_executed_plan().commands]
++        self.assertEqual(cmds, [("TURN", 90), ("FWD", 1105), ("FWD", 89), ("STOP", None)])
++
++    async def test_stopped_path_contributes_only_acknowledged_commands(self):
++        mc = self.controller()
++        plan = self.plan(3, ("FWD", 300), ("TURN", 90), ("FWD", 500))
++        mc._executed_rounds.append({"plan": plan, "completed": False, "last_acked": -1})
++        mc.current_run.current_path_id = 3
++        await mc._on_command_ack(CommandAckEvent(3, 0))
++        await mc._on_command_ack(CommandAckEvent(3, 1))
++        cmds = [(c.op, c.value) for c in mc.cumulative_executed_plan().commands]
++        self.assertEqual(cmds, [("FWD", 300), ("TURN", 90), ("STOP", None)])
++
++    async def test_new_mission_starts_empty(self):
++        mc = self.controller()
++        mc._executed_rounds.append({"plan": self.plan(1, ("FWD", 10)), "completed": True, "last_acked": 1})
++        mc._executed_rounds = []
++        self.assertEqual([c.op for c in mc.cumulative_executed_plan().commands], ["STOP"])
++
++
++if __name__ == "__main__":
++    unittest.main()

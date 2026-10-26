@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.py[cod]
+*.sqlite3
+data/settings.json
+data/snapshots/
+.idea/
+.vscode/
+.DS_Store

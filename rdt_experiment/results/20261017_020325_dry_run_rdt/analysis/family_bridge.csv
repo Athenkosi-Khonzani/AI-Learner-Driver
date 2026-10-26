@@ -1,0 +1,7 @@
+family,experiment1_sim_success,rdt_replay,rdt_first_pass
+basic_motion,100%,2/2,2/2
+coordinate_navigation,100%,2/2,2/2
+multi_obstacle,100%,1/1,1/1
+object_target,100%,1/1,1/1
+single_obstacle,100%,1/1,0/1
+tight_boundary,100%,1/1,1/1

@@ -1,0 +1,1 @@
+Everything in this folder comes from the SIMULATED rig (synthetic camera, simulated rover, scripted straight-line planner). It shows the format of the outputs only. It is not experimental data and must not be reported as results.

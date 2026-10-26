@@ -1,0 +1,52 @@
+{
+  "task_id": "RDT-06",
+  "title": "Route through several obstacles",
+  "family": "multi_obstacle",
+  "difficulty": 3,
+  "instruction": "Drive to coordinate (1450 mm, 1000 mm) while avoiding all three blocks, then stop.",
+  "start_pose": {
+    "x_mm": 250,
+    "y_mm": 250,
+    "heading_deg": 0
+  },
+  "blocks": [
+    {
+      "colour": "red",
+      "x_mm": 600,
+      "y_mm": 400,
+      "length_mm": 280.0,
+      "breadth_mm": 200.0,
+      "orientation_deg": 0
+    },
+    {
+      "colour": "green",
+      "x_mm": 950,
+      "y_mm": 850,
+      "length_mm": 280.0,
+      "breadth_mm": 200.0,
+      "orientation_deg": 0
+    },
+    {
+      "colour": "blue",
+      "x_mm": 1250,
+      "y_mm": 450,
+      "length_mm": 280.0,
+      "breadth_mm": 200.0,
+      "orientation_deg": 0
+    }
+  ],
+  "goal": {
+    "type": "absolute",
+    "x_mm": 1450,
+    "y_mm": 1000,
+    "position_tolerance_mm": 75,
+    "require_heading": false,
+    "target_heading_deg": 0.0,
+    "heading_tolerance_deg": 10.0
+  },
+  "arena_mm": [
+    1710.0,
+    1254.0
+  ],
+  "notes": ""
+}

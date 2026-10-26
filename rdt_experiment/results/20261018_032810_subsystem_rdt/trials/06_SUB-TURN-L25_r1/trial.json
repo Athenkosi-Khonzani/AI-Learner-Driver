@@ -1,0 +1,1448 @@
+{
+ "meta": {
+  "rdt_version": "1.0.0",
+  "session": "rdt",
+  "session_mode": "subsystem",
+  "slot": 6,
+  "task_id": "SUB-TURN-L25",
+  "task_family": "subsystem",
+  "task_difficulty": 1,
+  "task_sha256": "79c330db3903eeac143d93bee6920c81afeb44402a11e3f87f9f92a2d816b8cc",
+  "rep": 1,
+  "tape_check": true,
+  "instruction": "[fixed plan, no LLM] Turn left 25 deg",
+  "fixed_plan": true,
+  "verification_enabled": false,
+  "max_correction_rounds": 0,
+  "started_at": "2026-10-18T01:50:53.287+00:00",
+  "battery_v": 3.78,
+  "battery_source": "telemetry",
+  "override_reason": null,
+  "experiment_config_sha256": "6de282d7c97da8500f1f951af88625b52fd63524825fde516642dcbc98052146",
+  "host_fingerprint_sha256": "4c8605dc3f826b3dfc31664a0a41a0db652c079071f2172a41ef14fb8a1b4039",
+  "planner_system_prompt_sha256": "2b0993045ab7b4ec5044dcb61e630b10a673d35de65334257bd4003bfbbc1bf5",
+  "planner": "openai/gpt-6-sol",
+  "settings_path": "C:\\Users\\khonz\\OneDrive - University of Cape Town\\Final Year\\EEE4022S\\Might be final 2\\ai_learner_host\\data\\settings.json",
+  "host_overrides_changed": {
+   "planner_provider": [
+    "gemini",
+    "openai"
+   ],
+   "planner_model": [
+    "gemini-3.1-pro-preview",
+    "gpt-6-sol"
+   ],
+   "heading_reply_settle_seconds": [
+    5.0,
+    10.0
+   ],
+   "parallax_camera_height_mm": [
+    0.0,
+    1513.0
+   ],
+   "parallax_marker_height_mm": [
+    0.0,
+    55.0
+   ],
+   "parallax_nadir_x_mm": [
+    0.0,
+    858.4
+   ],
+   "parallax_nadir_y_mm": [
+    0.0,
+    -970.2
+   ]
+  },
+  "rover_uri": "ws://192.168.137.38:81",
+  "camera_url": "http://196.47.194.71:8080/video",
+  "arena_mm": [
+   1710.0,
+   1254.0
+  ]
+ },
+ "status": "complete",
+ "placement": {
+  "ok": true,
+  "items": [
+   {
+    "name": "rover",
+    "ok": true,
+    "text": "\u0394 9 mm, 0.5\u00b0, conf 0.80",
+    "position_error_mm": 8.558621384311802,
+    "angle_error_deg": 0.5
+   }
+  ]
+ },
+ "run_id": "feb72cb7ef65",
+ "finish": {
+  "t": 14.231,
+  "status": "DONE",
+  "state": "COMPLETED",
+  "correction_rounds": 0,
+  "message": ""
+ },
+ "rounds": [
+  {
+   "index": 0,
+   "source": "planner",
+   "revision": 0,
+   "path_id": 6,
+   "commands": [
+    [
+     "TURN",
+     -25
+    ],
+    [
+     "STOP"
+    ]
+   ],
+   "t_plan_saved": 0.201,
+   "start_world_key": "W0",
+   "end_world_key": "after_0",
+   "t_path_sent": 0.22,
+   "t_path_ack": 1.487,
+   "command_acks": [
+    {
+     "i": 0,
+     "t": 1.474
+    },
+    {
+     "i": 1,
+     "t": 1.487
+    }
+   ],
+   "nacks": [],
+   "verifier": {
+    "success": true,
+    "message": "The rover turned left approximately 27\u00b0, close to the requested 25\u00b0, and remained safely in place.",
+    "latency_s": 2.339,
+    "has_correction": false,
+    "correction": null
+   },
+   "planner_latency_s": 0.0,
+   "t_end_capture": 11.827
+  }
+ ],
+ "worlds": {
+  "W0": {
+   "t": 0.0,
+   "role": "start",
+   "snapshot_id": "a122a599faec46098e31d4f19d3e12ef",
+   "timestamp": "2026-10-18T01:50:46.466+00:00",
+   "scene": {
+    "schema": "ai_learner_world_state",
+    "schema_version": "1.0",
+    "coordinate_frame": {
+     "units": "mm",
+     "origin": "arena_bottom_left",
+     "x_axis": "right",
+     "y_axis": "up",
+     "heading": {
+      "0_deg": "+Y/up",
+      "90_deg": "+X/right",
+      "180_deg": "-Y/down",
+      "270_deg": "-X/left"
+     }
+    },
+    "arena": {
+     "width_mm": 1710.0,
+     "height_mm": 1254.0
+    },
+    "rover": {
+     "available": true,
+     "pose_valid": true,
+     "confidence": 0.795,
+     "footprint_mm": {
+      "length": 155.5,
+      "width": 121.3
+     },
+     "pose": {
+      "x_mm": 847.6,
+      "y_mm": 631.3,
+      "heading_deg": 0.5
+     },
+     "stale": false,
+     "age_s": 0.0
+    },
+    "obstacles": [],
+    "perception": {
+     "block_count": 0,
+     "rover_marker_id": 29,
+     "rover_marker_dictionary": "DICT_4X4_50"
+    }
+   },
+   "host_snapshot_id": "a122a599faec46098e31d4f19d3e12ef"
+  },
+  "after_0": {
+   "t": 11.811,
+   "role": "after",
+   "snapshot_id": "2c404700b11f4d06aff0cbab8367ce67",
+   "timestamp": "2026-10-18T01:51:04.951+00:00",
+   "scene": {
+    "schema": "ai_learner_world_state",
+    "schema_version": "1.0",
+    "coordinate_frame": {
+     "units": "mm",
+     "origin": "arena_bottom_left",
+     "x_axis": "right",
+     "y_axis": "up",
+     "heading": {
+      "0_deg": "+Y/up",
+      "90_deg": "+X/right",
+      "180_deg": "-Y/down",
+      "270_deg": "-X/left"
+     }
+    },
+    "arena": {
+     "width_mm": 1710.0,
+     "height_mm": 1254.0
+    },
+    "rover": {
+     "available": true,
+     "pose_valid": true,
+     "confidence": 0.8,
+     "footprint_mm": {
+      "length": 155.5,
+      "width": 121.3
+     },
+     "pose": {
+      "x_mm": 845.7,
+      "y_mm": 628.4,
+      "heading_deg": 333.4
+     },
+     "stale": false,
+     "age_s": 0.0
+    },
+    "obstacles": [],
+    "perception": {
+     "block_count": 0,
+     "rover_marker_id": 29,
+     "rover_marker_dictionary": "DICT_4X4_50"
+    }
+   }
+  }
+ },
+ "planner_calls": [
+  {
+   "t_request": 0.201,
+   "prompt": "[fixed plan, no LLM] Turn left 25 deg",
+   "t_response": 0.201,
+   "latency_s": 0.0,
+   "raw_response": "[fixed plan, no LLM]",
+   "commands": [
+    [
+     "TURN",
+     -25
+    ],
+    [
+     "STOP"
+    ]
+   ],
+   "fixed_plan": true
+  }
+ ],
+ "verifier_calls": [
+  {
+   "t_request": 11.855,
+   "path_id": 6,
+   "t_response": 14.194,
+   "latency_s": 2.339,
+   "success": true,
+   "message": "The rover turned left approximately 27\u00b0, close to the requested 25\u00b0, and remained safely in place.",
+   "correction": null
+  }
+ ],
+ "events": [
+  {
+   "t": 1.487,
+   "kind": "path_ack",
+   "round": 0,
+   "path_id": 6
+  }
+ ],
+ "telemetry_vbat": [
+  [
+   0.762,
+   3.76
+  ],
+  [
+   1.784,
+   3.78
+  ],
+  [
+   2.783,
+   3.78
+  ],
+  [
+   3.798,
+   3.78
+  ],
+  [
+   4.917,
+   3.81
+  ],
+  [
+   5.937,
+   3.8
+  ],
+  [
+   6.884,
+   3.78
+  ],
+  [
+   7.874,
+   3.8
+  ],
+  [
+   8.855,
+   3.77
+  ],
+  [
+   9.838,
+   3.78
+  ],
+  [
+   10.831,
+   3.8
+  ],
+  [
+   11.809,
+   3.81
+  ],
+  [
+   12.789,
+   3.78
+  ],
+  [
+   13.799,
+   3.77
+  ],
+  [
+   14.787,
+   3.77
+  ]
+ ],
+ "timing": {
+  "planner_latency_s": 0.0,
+  "mission_time_s": 14.085638900000282
+ },
+ "trail": [
+  {
+   "t": 0.211,
+   "round": 0,
+   "x_mm": 847.8,
+   "y_mm": 631.2,
+   "heading_deg": 0.8,
+   "confidence": 0.794,
+   "detected": true
+  },
+  {
+   "t": 0.348,
+   "round": 0,
+   "x_mm": 847.8,
+   "y_mm": 631.0,
+   "heading_deg": 0.7,
+   "confidence": 0.794,
+   "detected": true
+  },
+  {
+   "t": 0.481,
+   "round": 0,
+   "x_mm": 847.9,
+   "y_mm": 630.8,
+   "heading_deg": 0.4,
+   "confidence": 0.794,
+   "detected": true
+  },
+  {
+   "t": 0.617,
+   "round": 0,
+   "x_mm": 847.7,
+   "y_mm": 630.8,
+   "heading_deg": 0.4,
+   "confidence": 0.794,
+   "detected": true
+  },
+  {
+   "t": 0.753,
+   "round": 0,
+   "x_mm": 847.8,
+   "y_mm": 630.7,
+   "heading_deg": 0.5,
+   "confidence": 0.794,
+   "detected": true
+  },
+  {
+   "t": 1.021,
+   "round": 0,
+   "x_mm": 847.9,
+   "y_mm": 630.8,
+   "heading_deg": 0.7,
+   "confidence": 0.794,
+   "detected": true
+  },
+  {
+   "t": 1.286,
+   "round": 0,
+   "x_mm": 848.1,
+   "y_mm": 630.6,
+   "heading_deg": 0.6,
+   "confidence": 0.793,
+   "detected": true
+  },
+  {
+   "t": 1.537,
+   "round": 0,
+   "x_mm": 847.7,
+   "y_mm": 630.6,
+   "heading_deg": 0.4,
+   "confidence": 0.794,
+   "detected": true
+  },
+  {
+   "t": 1.797,
+   "round": 0,
+   "x_mm": 847.7,
+   "y_mm": 631.1,
+   "heading_deg": 0.4,
+   "confidence": 0.794,
+   "detected": true
+  },
+  {
+   "t": 1.935,
+   "round": 0,
+   "x_mm": 847.8,
+   "y_mm": 631.0,
+   "heading_deg": 0.4,
+   "confidence": 0.794,
+   "detected": true
+  },
+  {
+   "t": 2.041,
+   "round": 0,
+   "x_mm": 847.9,
+   "y_mm": 630.8,
+   "heading_deg": 0.5,
+   "confidence": 0.794,
+   "detected": true
+  },
+  {
+   "t": 2.168,
+   "round": 0,
+   "x_mm": 847.9,
+   "y_mm": 630.8,
+   "heading_deg": 0.4,
+   "confidence": 0.794,
+   "detected": true
+  },
+  {
+   "t": 2.299,
+   "round": 0,
+   "x_mm": 847.9,
+   "y_mm": 630.9,
+   "heading_deg": 0.5,
+   "confidence": 0.794,
+   "detected": true
+  },
+  {
+   "t": 2.542,
+   "round": 0,
+   "x_mm": 847.9,
+   "y_mm": 630.9,
+   "heading_deg": 0.5,
+   "confidence": 0.794,
+   "detected": true
+  },
+  {
+   "t": 2.67,
+   "round": 0,
+   "x_mm": 847.9,
+   "y_mm": 630.9,
+   "heading_deg": 0.6,
+   "confidence": 0.795,
+   "detected": true
+  },
+  {
+   "t": 2.794,
+   "round": 0,
+   "x_mm": 847.8,
+   "y_mm": 630.9,
+   "heading_deg": 0.6,
+   "confidence": 0.794,
+   "detected": true
+  },
+  {
+   "t": 2.934,
+   "round": 0,
+   "x_mm": 847.9,
+   "y_mm": 630.9,
+   "heading_deg": 0.6,
+   "confidence": 0.794,
+   "detected": true
+  },
+  {
+   "t": 3.044,
+   "round": 0,
+   "x_mm": 847.8,
+   "y_mm": 630.9,
+   "heading_deg": 0.6,
+   "confidence": 0.794,
+   "detected": true
+  },
+  {
+   "t": 3.166,
+   "round": 0,
+   "x_mm": 847.9,
+   "y_mm": 631.0,
+   "heading_deg": 0.8,
+   "confidence": 0.794,
+   "detected": true
+  },
+  {
+   "t": 3.288,
+   "round": 0,
+   "x_mm": 848.0,
+   "y_mm": 630.9,
+   "heading_deg": 0.5,
+   "confidence": 0.793,
+   "detected": true
+  },
+  {
+   "t": 3.43,
+   "round": 0,
+   "x_mm": 848.0,
+   "y_mm": 630.9,
+   "heading_deg": 0.6,
+   "confidence": 0.794,
+   "detected": true
+  },
+  {
+   "t": 3.564,
+   "round": 0,
+   "x_mm": 848.2,
+   "y_mm": 631.1,
+   "heading_deg": 0.6,
+   "confidence": 0.793,
+   "detected": true
+  },
+  {
+   "t": 3.687,
+   "round": 0,
+   "x_mm": 847.9,
+   "y_mm": 631.0,
+   "heading_deg": 0.3,
+   "confidence": 0.794,
+   "detected": true
+  },
+  {
+   "t": 3.81,
+   "round": 0,
+   "x_mm": 848.0,
+   "y_mm": 630.9,
+   "heading_deg": 0.5,
+   "confidence": 0.793,
+   "detected": true
+  },
+  {
+   "t": 3.935,
+   "round": 0,
+   "x_mm": 848.1,
+   "y_mm": 630.9,
+   "heading_deg": 0.5,
+   "confidence": 0.794,
+   "detected": true
+  },
+  {
+   "t": 4.062,
+   "round": 0,
+   "x_mm": 847.0,
+   "y_mm": 628.8,
+   "heading_deg": 341.2,
+   "confidence": 0.798,
+   "detected": true
+  },
+  {
+   "t": 4.185,
+   "round": 0,
+   "x_mm": 846.4,
+   "y_mm": 628.2,
+   "heading_deg": 334.6,
+   "confidence": 0.8,
+   "detected": true
+  },
+  {
+   "t": 4.305,
+   "round": 0,
+   "x_mm": 846.1,
+   "y_mm": 628.1,
+   "heading_deg": 332.7,
+   "confidence": 0.799,
+   "detected": true
+  },
+  {
+   "t": 4.447,
+   "round": 0,
+   "x_mm": 846.0,
+   "y_mm": 628.0,
+   "heading_deg": 332.5,
+   "confidence": 0.799,
+   "detected": true
+  },
+  {
+   "t": 4.733,
+   "round": 0,
+   "x_mm": 846.0,
+   "y_mm": 628.5,
+   "heading_deg": 333.5,
+   "confidence": 0.8,
+   "detected": true
+  },
+  {
+   "t": 4.98,
+   "round": 0,
+   "x_mm": 845.9,
+   "y_mm": 628.6,
+   "heading_deg": 333.4,
+   "confidence": 0.799,
+   "detected": true
+  },
+  {
+   "t": 5.107,
+   "round": 0,
+   "x_mm": 845.7,
+   "y_mm": 628.7,
+   "heading_deg": 333.3,
+   "confidence": 0.799,
+   "detected": true
+  },
+  {
+   "t": 5.23,
+   "round": 0,
+   "x_mm": 845.9,
+   "y_mm": 628.7,
+   "heading_deg": 333.5,
+   "confidence": 0.8,
+   "detected": true
+  },
+  {
+   "t": 5.353,
+   "round": 0,
+   "x_mm": 845.9,
+   "y_mm": 628.5,
+   "heading_deg": 333.6,
+   "confidence": 0.8,
+   "detected": true
+  },
+  {
+   "t": 5.49,
+   "round": 0,
+   "x_mm": 845.7,
+   "y_mm": 628.6,
+   "heading_deg": 333.5,
+   "confidence": 0.8,
+   "detected": true
+  },
+  {
+   "t": 5.634,
+   "round": 0,
+   "x_mm": 845.8,
+   "y_mm": 628.7,
+   "heading_deg": 333.5,
+   "confidence": 0.8,
+   "detected": true
+  },
+  {
+   "t": 5.773,
+   "round": 0,
+   "x_mm": 846.0,
+   "y_mm": 628.8,
+   "heading_deg": 333.6,
+   "confidence": 0.8,
+   "detected": true
+  },
+  {
+   "t": 5.907,
+   "round": 0,
+   "x_mm": 845.9,
+   "y_mm": 628.8,
+   "heading_deg": 333.5,
+   "confidence": 0.8,
+   "detected": true
+  },
+  {
+   "t": 6.04,
+   "round": 0,
+   "x_mm": 845.6,
+   "y_mm": 628.6,
+   "heading_deg": 333.5,
+   "confidence": 0.8,
+   "detected": true
+  },
+  {
+   "t": 6.162,
+   "round": 0,
+   "x_mm": 845.5,
+   "y_mm": 628.7,
+   "heading_deg": 333.3,
+   "confidence": 0.799,
+   "detected": true
+  },
+  {
+   "t": 6.312,
+   "round": 0,
+   "x_mm": 845.5,
+   "y_mm": 628.6,
+   "heading_deg": 333.3,
+   "confidence": 0.8,
+   "detected": true
+  },
+  {
+   "t": 6.435,
+   "round": 0,
+   "x_mm": 845.6,
+   "y_mm": 628.7,
+   "heading_deg": 333.3,
+   "confidence": 0.8,
+   "detected": true
+  },
+  {
+   "t": 6.582,
+   "round": 0,
+   "x_mm": 845.7,
+   "y_mm": 628.5,
+   "heading_deg": 333.4,
+   "confidence": 0.8,
+   "detected": true
+  },
+  {
+   "t": 6.721,
+   "round": 0,
+   "x_mm": 845.6,
+   "y_mm": 628.6,
+   "heading_deg": 333.5,
+   "confidence": 0.8,
+   "detected": true
+  },
+  {
+   "t": 6.847,
+   "round": 0,
+   "x_mm": 845.6,
+   "y_mm": 628.6,
+   "heading_deg": 333.4,
+   "confidence": 0.8,
+   "detected": true
+  },
+  {
+   "t": 6.977,
+   "round": 0,
+   "x_mm": 845.7,
+   "y_mm": 628.4,
+   "heading_deg": 333.3,
+   "confidence": 0.8,
+   "detected": true
+  },
+  {
+   "t": 7.114,
+   "round": 0,
+   "x_mm": 845.7,
+   "y_mm": 628.4,
+   "heading_deg": 333.3,
+   "confidence": 0.799,
+   "detected": true
+  },
+  {
+   "t": 7.239,
+   "round": 0,
+   "x_mm": 845.8,
+   "y_mm": 628.4,
+   "heading_deg": 333.4,
+   "confidence": 0.799,
+   "detected": true
+  },
+  {
+   "t": 7.377,
+   "round": 0,
+   "x_mm": 845.6,
+   "y_mm": 628.6,
+   "heading_deg": 333.3,
+   "confidence": 0.799,
+   "detected": true
+  },
+  {
+   "t": 7.518,
+   "round": 0,
+   "x_mm": 845.8,
+   "y_mm": 628.6,
+   "heading_deg": 333.6,
+   "confidence": 0.799,
+   "detected": true
+  },
+  {
+   "t": 7.635,
+   "round": 0,
+   "x_mm": 845.6,
+   "y_mm": 628.8,
+   "heading_deg": 333.4,
+   "confidence": 0.799,
+   "detected": true
+  },
+  {
+   "t": 7.764,
+   "round": 0,
+   "x_mm": 845.8,
+   "y_mm": 628.4,
+   "heading_deg": 333.4,
+   "confidence": 0.8,
+   "detected": true
+  },
+  {
+   "t": 7.895,
+   "round": 0,
+   "x_mm": 845.6,
+   "y_mm": 628.5,
+   "heading_deg": 333.3,
+   "confidence": 0.799,
+   "detected": true
+  },
+  {
+   "t": 8.035,
+   "round": 0,
+   "x_mm": 845.6,
+   "y_mm": 628.3,
+   "heading_deg": 333.3,
+   "confidence": 0.799,
+   "detected": true
+  },
+  {
+   "t": 8.155,
+   "round": 0,
+   "x_mm": 845.6,
+   "y_mm": 628.3,
+   "heading_deg": 333.4,
+   "confidence": 0.799,
+   "detected": true
+  },
+  {
+   "t": 8.423,
+   "round": 0,
+   "x_mm": 845.7,
+   "y_mm": 628.4,
+   "heading_deg": 333.4,
+   "confidence": 0.799,
+   "detected": true
+  },
+  {
+   "t": 8.568,
+   "round": 0,
+   "x_mm": 845.6,
+   "y_mm": 628.4,
+   "heading_deg": 333.2,
+   "confidence": 0.798,
+   "detected": true
+  },
+  {
+   "t": 8.709,
+   "round": 0,
+   "x_mm": 845.8,
+   "y_mm": 628.4,
+   "heading_deg": 333.5,
+   "confidence": 0.8,
+   "detected": true
+  },
+  {
+   "t": 8.843,
+   "round": 0,
+   "x_mm": 845.8,
+   "y_mm": 628.4,
+   "heading_deg": 333.5,
+   "confidence": 0.799,
+   "detected": true
+  },
+  {
+   "t": 8.966,
+   "round": 0,
+   "x_mm": 845.7,
+   "y_mm": 628.4,
+   "heading_deg": 333.4,
+   "confidence": 0.8,
+   "detected": true
+  },
+  {
+   "t": 9.089,
+   "round": 0,
+   "x_mm": 845.7,
+   "y_mm": 628.7,
+   "heading_deg": 333.2,
+   "confidence": 0.8,
+   "detected": true
+  },
+  {
+   "t": 9.238,
+   "round": 0,
+   "x_mm": 845.6,
+   "y_mm": 628.8,
+   "heading_deg": 333.4,
+   "confidence": 0.799,
+   "detected": true
+  },
+  {
+   "t": 9.36,
+   "round": 0,
+   "x_mm": 845.7,
+   "y_mm": 628.6,
+   "heading_deg": 333.4,
+   "confidence": 0.8,
+   "detected": true
+  },
+  {
+   "t": 9.484,
+   "round": 0,
+   "x_mm": 845.8,
+   "y_mm": 628.4,
+   "heading_deg": 333.4,
+   "confidence": 0.8,
+   "detected": true
+  },
+  {
+   "t": 9.627,
+   "round": 0,
+   "x_mm": 845.9,
+   "y_mm": 628.7,
+   "heading_deg": 333.4,
+   "confidence": 0.8,
+   "detected": true
+  },
+  {
+   "t": 9.887,
+   "round": 0,
+   "x_mm": 845.9,
+   "y_mm": 628.6,
+   "heading_deg": 333.6,
+   "confidence": 0.8,
+   "detected": true
+  },
+  {
+   "t": 10.026,
+   "round": 0,
+   "x_mm": 845.8,
+   "y_mm": 628.6,
+   "heading_deg": 333.5,
+   "confidence": 0.8,
+   "detected": true
+  },
+  {
+   "t": 10.152,
+   "round": 0,
+   "x_mm": 845.8,
+   "y_mm": 628.5,
+   "heading_deg": 333.5,
+   "confidence": 0.799,
+   "detected": true
+  },
+  {
+   "t": 10.286,
+   "round": 0,
+   "x_mm": 845.8,
+   "y_mm": 628.4,
+   "heading_deg": 333.4,
+   "confidence": 0.8,
+   "detected": true
+  },
+  {
+   "t": 10.425,
+   "round": 0,
+   "x_mm": 845.7,
+   "y_mm": 628.4,
+   "heading_deg": 333.3,
+   "confidence": 0.8,
+   "detected": true
+  },
+  {
+   "t": 10.567,
+   "round": 0,
+   "x_mm": 845.8,
+   "y_mm": 628.4,
+   "heading_deg": 333.4,
+   "confidence": 0.799,
+   "detected": true
+  },
+  {
+   "t": 10.708,
+   "round": 0,
+   "x_mm": 845.8,
+   "y_mm": 628.6,
+   "heading_deg": 333.5,
+   "confidence": 0.799,
+   "detected": true
+  },
+  {
+   "t": 10.821,
+   "round": 0,
+   "x_mm": 845.7,
+   "y_mm": 628.4,
+   "heading_deg": 333.4,
+   "confidence": 0.8,
+   "detected": true
+  },
+  {
+   "t": 10.946,
+   "round": 0,
+   "x_mm": 845.7,
+   "y_mm": 628.5,
+   "heading_deg": 333.3,
+   "confidence": 0.8,
+   "detected": true
+  },
+  {
+   "t": 11.082,
+   "round": 0,
+   "x_mm": 845.5,
+   "y_mm": 628.5,
+   "heading_deg": 333.3,
+   "confidence": 0.799,
+   "detected": true
+  },
+  {
+   "t": 11.335,
+   "round": 0,
+   "x_mm": 846.0,
+   "y_mm": 628.5,
+   "heading_deg": 333.3,
+   "confidence": 0.8,
+   "detected": true
+  },
+  {
+   "t": 11.568,
+   "round": 0,
+   "x_mm": 845.7,
+   "y_mm": 628.6,
+   "heading_deg": 333.4,
+   "confidence": 0.8,
+   "detected": true
+  },
+  {
+   "t": 11.827,
+   "round": 0,
+   "x_mm": 845.7,
+   "y_mm": 628.5,
+   "heading_deg": 333.4,
+   "confidence": 0.8,
+   "detected": true
+  },
+  {
+   "t": 12.071,
+   "round": 0,
+   "x_mm": 845.9,
+   "y_mm": 628.9,
+   "heading_deg": 333.5,
+   "confidence": 0.799,
+   "detected": true
+  },
+  {
+   "t": 12.345,
+   "round": 0,
+   "x_mm": 845.8,
+   "y_mm": 628.5,
+   "heading_deg": 333.5,
+   "confidence": 0.799,
+   "detected": true
+  },
+  {
+   "t": 12.6,
+   "round": 0,
+   "x_mm": 845.8,
+   "y_mm": 628.7,
+   "heading_deg": 333.7,
+   "confidence": 0.799,
+   "detected": true
+  },
+  {
+   "t": 12.736,
+   "round": 0,
+   "x_mm": 845.6,
+   "y_mm": 628.7,
+   "heading_deg": 333.3,
+   "confidence": 0.799,
+   "detected": true
+  },
+  {
+   "t": 12.88,
+   "round": 0,
+   "x_mm": 845.7,
+   "y_mm": 628.5,
+   "heading_deg": 333.4,
+   "confidence": 0.8,
+   "detected": true
+  },
+  {
+   "t": 13.264,
+   "round": 0,
+   "x_mm": 846.1,
+   "y_mm": 628.5,
+   "heading_deg": 333.5,
+   "confidence": 0.8,
+   "detected": true
+  },
+  {
+   "t": 13.551,
+   "round": 0,
+   "x_mm": 845.6,
+   "y_mm": 628.6,
+   "heading_deg": 333.5,
+   "confidence": 0.799,
+   "detected": true
+  },
+  {
+   "t": 13.814,
+   "round": 0,
+   "x_mm": 845.7,
+   "y_mm": 628.6,
+   "heading_deg": 333.5,
+   "confidence": 0.8,
+   "detected": true
+  },
+  {
+   "t": 14.074,
+   "round": 0,
+   "x_mm": 845.7,
+   "y_mm": 628.6,
+   "heading_deg": 333.4,
+   "confidence": 0.8,
+   "detected": true
+  },
+  {
+   "t": 14.221,
+   "round": 0,
+   "x_mm": 845.6,
+   "y_mm": 628.6,
+   "heading_deg": 333.4,
+   "confidence": 0.8,
+   "detected": true
+  },
+  {
+   "t": 14.341,
+   "round": 0,
+   "x_mm": 845.7,
+   "y_mm": 628.6,
+   "heading_deg": 333.4,
+   "confidence": 0.8,
+   "detected": true
+  },
+  {
+   "t": 14.464,
+   "round": 0,
+   "x_mm": 845.8,
+   "y_mm": 628.6,
+   "heading_deg": 333.5,
+   "confidence": 0.799,
+   "detected": true
+  },
+  {
+   "t": 14.588,
+   "round": 0,
+   "x_mm": 845.8,
+   "y_mm": 628.6,
+   "heading_deg": 333.4,
+   "confidence": 0.8,
+   "detected": true
+  },
+  {
+   "t": 14.739,
+   "round": 0,
+   "x_mm": 845.8,
+   "y_mm": 628.7,
+   "heading_deg": 333.4,
+   "confidence": 0.8,
+   "detected": true
+  }
+ ],
+ "recorder_errors": [],
+ "annotations": {
+  "tape_x_mm": 841.0,
+  "tape_y_mm": 626.0,
+  "contact_first_pass": false,
+  "contact_correction": false,
+  "void": false,
+  "void_reason": null,
+  "notes": null,
+  "updated_at": "2026-10-18T01:52:59.362+00:00"
+ },
+ "scores": {
+  "goal": {
+   "x_mm": 855.0,
+   "y_mm": 627.0,
+   "position_tolerance_mm": 50.0,
+   "require_heading": true,
+   "heading_deg": 335.0,
+   "heading_tolerance_deg": 10.0
+  },
+  "first_pass_success": true,
+  "closed_loop_success": null,
+  "corrections_used": 0,
+  "replay_success": true,
+  "first_pass_goal_error_mm": 9.404786015641136,
+  "first_pass_heading_error_deg": 1.6000000000000227,
+  "final_goal_error_mm": 9.404786015641136,
+  "e_pos_mm": 3.5,
+  "e_theta_deg": 2.1,
+  "collision_any_round": false,
+  "boundary_violation_any_round": false,
+  "min_block_clearance_mm": null,
+  "min_block_clearance_first_pass_mm": null,
+  "replay_min_block_clearance_mm": null,
+  "reference_path_mm": 8.6,
+  "reference_path": [
+   [
+    847.6,
+    631.3
+   ],
+   [
+    855.0,
+    627.0
+   ]
+  ],
+  "driven_path_first_pass_mm": 0.0,
+  "driven_path_total_mm": 0.0,
+  "path_efficiency_first_pass": null,
+  "plan_commands_first_pass": 2,
+  "plan_rotation_first_pass_deg": 25.0,
+  "planning_latency_s": 0.0,
+  "drive_time_first_pass_s": 1.27,
+  "mission_time_s": 14.09,
+  "verifier_agreement": [
+   true
+  ],
+  "camera_tape": {
+   "camera_minus_tape_mm": 5.3,
+   "disagrees": false
+  },
+  "attribution": {
+   "first_pass": null,
+   "closed_loop": null,
+   "detail": "",
+   "confirmed_by_tape": null,
+   "verifier_disagreed_rounds": []
+  },
+  "rounds": [
+   {
+    "index": 0,
+    "source": "planner",
+    "commands": [
+     [
+      "TURN",
+      -25
+     ],
+     [
+      "STOP"
+     ]
+    ],
+    "n_commands": 2,
+    "score": {
+     "success": true,
+     "final_x_mm": 845.7,
+     "final_y_mm": 628.4,
+     "final_heading_deg": 333.4,
+     "goal_position_error_mm": 9.404786015641136,
+     "goal_heading_error_deg": 1.6000000000000227,
+     "position_ok": true,
+     "heading_ok": true,
+     "stop_reached": true,
+     "collision": false,
+     "collision_evidence": [],
+     "boundary_violation": false,
+     "pose_available": true
+    },
+    "trail": {
+     "samples": 92,
+     "valid_samples": 92,
+     "marker_lost_fraction": 0.0,
+     "path_length_mm": 0.0,
+     "rotation_deg": 26.19999999999999,
+     "min_block_clearance_mm": null,
+     "min_boundary_clearance_mm": 528.4569560203327,
+     "trail_overlaps_block": false,
+     "trail_leaves_arena": false
+    },
+    "block_displacement_mm": {},
+    "replay": {
+     "success": true,
+     "final_pose": [
+      847.6,
+      631.3,
+      335.5
+     ],
+     "position_error_mm": 8.6,
+     "failure_reason": null,
+     "min_block_clearance_mm": null,
+     "min_boundary_clearance_mm": 526.8,
+     "travel_mm": 0.0,
+     "rotation_deg": 25.0,
+     "path": [
+      [
+       847.6,
+       631.3,
+       0.5
+      ],
+      [
+       847.6,
+       631.3,
+       359.5
+      ],
+      [
+       847.6,
+       631.3,
+       358.5
+      ],
+      [
+       847.6,
+       631.3,
+       357.5
+      ],
+      [
+       847.6,
+       631.3,
+       356.5
+      ],
+      [
+       847.6,
+       631.3,
+       355.5
+      ],
+      [
+       847.6,
+       631.3,
+       354.5
+      ],
+      [
+       847.6,
+       631.3,
+       353.5
+      ],
+      [
+       847.6,
+       631.3,
+       352.5
+      ],
+      [
+       847.6,
+       631.3,
+       351.5
+      ],
+      [
+       847.6,
+       631.3,
+       350.5
+      ],
+      [
+       847.6,
+       631.3,
+       349.5
+      ],
+      [
+       847.6,
+       631.3,
+       348.5
+      ],
+      [
+       847.6,
+       631.3,
+       347.5
+      ],
+      [
+       847.6,
+       631.3,
+       346.5
+      ],
+      [
+       847.6,
+       631.3,
+       345.5
+      ],
+      [
+       847.6,
+       631.3,
+       344.5
+      ],
+      [
+       847.6,
+       631.3,
+       343.5
+      ],
+      [
+       847.6,
+       631.3,
+       342.5
+      ],
+      [
+       847.6,
+       631.3,
+       341.5
+      ],
+      [
+       847.6,
+       631.3,
+       340.5
+      ],
+      [
+       847.6,
+       631.3,
+       339.5
+      ],
+      [
+       847.6,
+       631.3,
+       338.5
+      ],
+      [
+       847.6,
+       631.3,
+       337.5
+      ],
+      [
+       847.6,
+       631.3,
+       336.5
+      ],
+      [
+       847.6,
+       631.3,
+       335.5
+      ],
+      [
+       847.6,
+       631.3,
+       335.5
+      ]
+     ]
+    },
+    "predicted_end_pose": [
+     847.6,
+     631.3,
+     335.5
+    ],
+    "predicted_path": [
+     [
+      847.6,
+      631.3
+     ],
+     [
+      847.6,
+      631.3
+     ]
+    ],
+    "e_pos_mm": 3.5,
+    "e_theta_deg": 2.1,
+    "planner_latency_s": 0.0,
+    "drive_time_s": 1.27,
+    "nacks": [],
+    "verifier": {
+     "success": true,
+     "message": "The rover turned left approximately 27\u00b0, close to the requested 25\u00b0, and remained safely in place.",
+     "latency_s": 2.339,
+     "has_correction": false,
+     "agrees_with_rule": true
+    }
+   }
+  ]
+ }
+}

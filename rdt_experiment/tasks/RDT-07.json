@@ -1,0 +1,60 @@
+{
+  "task_id": "RDT-07",
+  "title": "Tight clearance between blocks",
+  "family": "tight_boundary",
+  "difficulty": 3,
+  "instruction": "Drive through the gap between the green and yellow blocks to coordinate (855 mm, 1050 mm), then stop.",
+  "start_pose": {
+    "x_mm": 400,
+    "y_mm": 250,
+    "heading_deg": 0
+  },
+  "blocks": [
+    {
+      "colour": "red",
+      "x_mm": 225,
+      "y_mm": 650,
+      "length_mm": 280.0,
+      "breadth_mm": 200.0,
+      "orientation_deg": 90
+    },
+    {
+      "colour": "green",
+      "x_mm": 590,
+      "y_mm": 650,
+      "length_mm": 280.0,
+      "breadth_mm": 200.0,
+      "orientation_deg": 90
+    },
+    {
+      "colour": "yellow",
+      "x_mm": 1120,
+      "y_mm": 650,
+      "length_mm": 280.0,
+      "breadth_mm": 200.0,
+      "orientation_deg": 90
+    },
+    {
+      "colour": "blue",
+      "x_mm": 1485,
+      "y_mm": 650,
+      "length_mm": 280.0,
+      "breadth_mm": 200.0,
+      "orientation_deg": 90
+    }
+  ],
+  "goal": {
+    "type": "absolute",
+    "x_mm": 855,
+    "y_mm": 1050,
+    "position_tolerance_mm": 60,
+    "require_heading": false,
+    "target_heading_deg": 0.0,
+    "heading_tolerance_deg": 10.0
+  },
+  "notes": "Four blocks form a wall at y = 650 mm. Only the 250 mm gap between green and yellow is passable; the other gaps are 85 mm.",
+  "arena_mm": [
+    1710.0,
+    1254.0
+  ]
+}

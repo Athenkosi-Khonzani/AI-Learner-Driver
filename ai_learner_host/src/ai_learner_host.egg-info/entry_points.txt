@@ -1,0 +1,2 @@
+[console_scripts]
+ai-learner-host = ai_learner_host.app:main

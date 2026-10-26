@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai-learner-host"
+version = "0.3.2"
+description = "Cross-platform desktop host application for the AI Learner Rover Driver"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "PySide6>=6.7,<7",
+  "qasync>=0.27,<1",
+  "websockets>=12,<17",
+  "opencv-contrib-python>=4.10,<5",
+  "numpy>=1.26,<3",
+  "pydantic>=2.8,<3",
+  "openai>=2,<3",
+  "anthropic>=1,<2",
+  "google-genai>=2,<3",
+  "sounddevice>=0.5,<1",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.scripts]
+ai-learner-host = "ai_learner_host.app:main"

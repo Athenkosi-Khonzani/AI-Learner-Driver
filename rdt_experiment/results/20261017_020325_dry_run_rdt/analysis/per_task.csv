@@ -1,0 +1,10 @@
+task,family,n,first_pass,closed_loop,replay,median_goal_error_mm,median_e_pos_mm,median_e_theta_deg,min_clearance_mm,median_path_efficiency
+RDT-01,basic_motion,1,1/1,1/1,1/1,9,13,1.0,-,0.99
+RDT-02,basic_motion,1,1/1,1/1,1/1,32,32,0.7,-,0.97
+RDT-03,coordinate_navigation,1,1/1,1/1,1/1,31,32,2.3,-,0.98
+RDT-04,object_target,1,1/1,1/1,1/1,29,29,0.0,130,0.97
+RDT-05,single_obstacle,1,0/1,1/1,1/1,89,89,7.2,212,0.65
+RDT-06,multi_obstacle,1,1/1,1/1,1/1,41,41,1.1,105,0.76
+RDT-07,tight_boundary,1,1/1,1/1,1/1,38,38,1.4,58,0.85
+RDT-08,coordinate_navigation,1,1/1,1/1,1/1,41,42,5.0,234,0.76
+Total,,8,"7/8 (88%, 53-98%)","8/8 (100%, 68-100%)","8/8 (100%, 68-100%)",35,35,1.2,58,0.91

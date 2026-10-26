@@ -1,0 +1,27 @@
+{
+  "task_id": "RDT-02",
+  "title": "Turn followed by translation",
+  "family": "basic_motion",
+  "difficulty": 1,
+  "instruction": "Turn right by 90 degrees, move forward 800 mm, then stop.",
+  "start_pose": {
+    "x_mm": 300,
+    "y_mm": 350,
+    "heading_deg": 0
+  },
+  "blocks": [],
+  "goal": {
+    "type": "absolute",
+    "x_mm": 1100,
+    "y_mm": 350,
+    "position_tolerance_mm": 50,
+    "require_heading": true,
+    "target_heading_deg": 90,
+    "heading_tolerance_deg": 10
+  },
+  "arena_mm": [
+    1710.0,
+    1254.0
+  ],
+  "notes": ""
+}

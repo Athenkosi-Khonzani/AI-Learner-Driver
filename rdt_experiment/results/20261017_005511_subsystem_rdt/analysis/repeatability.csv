@@ -1,0 +1,9 @@
+task,runs,max_spread_of_first_pass_end_mm
+SUB-FWD-300,1,-
+SUB-FWD-800,1,-
+SUB-SQUARE,1,-
+SUB-TURN-180,1,-
+SUB-TURN-L25,1,-
+SUB-TURN-L90,1,-
+SUB-TURN-R20,1,-
+SUB-TURN-R90,1,-

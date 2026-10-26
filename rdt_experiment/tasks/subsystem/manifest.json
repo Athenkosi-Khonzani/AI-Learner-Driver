@@ -1,0 +1,84 @@
+{
+  "set": "subsystem",
+  "locked": false,
+  "locked_on": null,
+  "rover_footprint_mm": [
+    155.5,
+    121.3
+  ],
+  "rule": "Hidden goals and reference paths are never sent to the planner.",
+  "tasks": [
+    {
+      "id": "SUB-FWD-300",
+      "file": "SUB-FWD-300.json",
+      "family": "subsystem",
+      "difficulty": 1,
+      "title": "Straight 300 mm",
+      "reference_path_mm": null,
+      "sha256": null
+    },
+    {
+      "id": "SUB-FWD-800",
+      "file": "SUB-FWD-800.json",
+      "family": "subsystem",
+      "difficulty": 1,
+      "title": "Straight 800 mm",
+      "reference_path_mm": null,
+      "sha256": null
+    },
+    {
+      "id": "SUB-SQUARE",
+      "file": "SUB-SQUARE.json",
+      "family": "subsystem",
+      "difficulty": 1,
+      "title": "Square 400 mm",
+      "reference_path_mm": null,
+      "sha256": null
+    },
+    {
+      "id": "SUB-TURN-180",
+      "file": "SUB-TURN-180.json",
+      "family": "subsystem",
+      "difficulty": 1,
+      "title": "Turn 180 deg",
+      "reference_path_mm": null,
+      "sha256": null
+    },
+    {
+      "id": "SUB-TURN-L25",
+      "file": "SUB-TURN-L25.json",
+      "family": "subsystem",
+      "difficulty": 1,
+      "title": "Turn left 25 deg",
+      "reference_path_mm": null,
+      "sha256": null
+    },
+    {
+      "id": "SUB-TURN-L90",
+      "file": "SUB-TURN-L90.json",
+      "family": "subsystem",
+      "difficulty": 1,
+      "title": "Turn left 90 deg",
+      "reference_path_mm": null,
+      "sha256": null
+    },
+    {
+      "id": "SUB-TURN-R20",
+      "file": "SUB-TURN-R20.json",
+      "family": "subsystem",
+      "difficulty": 1,
+      "title": "Turn right 20 deg",
+      "reference_path_mm": null,
+      "sha256": null
+    },
+    {
+      "id": "SUB-TURN-R90",
+      "file": "SUB-TURN-R90.json",
+      "family": "subsystem",
+      "difficulty": 1,
+      "title": "Turn right 90 deg",
+      "reference_path_mm": null,
+      "sha256": null
+    }
+  ]
+}

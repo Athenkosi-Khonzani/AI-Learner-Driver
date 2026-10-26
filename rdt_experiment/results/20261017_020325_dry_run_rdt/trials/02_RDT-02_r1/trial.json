@@ -1,0 +1,3013 @@
+{
+ "meta": {
+  "rdt_version": "1.0.0",
+  "session": "rdt",
+  "session_mode": "dry_run",
+  "slot": 2,
+  "task_id": "RDT-02",
+  "task_family": "basic_motion",
+  "task_difficulty": 1,
+  "task_sha256": "693e8bceabebbcd76395cb9779f6a7f24965f6fb694195144beac116802c7f14",
+  "rep": 1,
+  "tape_check": false,
+  "instruction": "Turn right by 90 degrees, move forward 800 mm, then stop.",
+  "fixed_plan": false,
+  "verification_enabled": true,
+  "max_correction_rounds": 2,
+  "started_at": "2026-10-17T00:42:55.088+00:00",
+  "battery_v": 3.87,
+  "battery_source": "telemetry",
+  "override_reason": null,
+  "experiment_config_sha256": "4775d97b0c52ff6d06808af3ae7461778afbc357e118745f93013394100ca939",
+  "host_fingerprint_sha256": "65d5672154c57167ff897cef7652ffa786961acd9ee7c503d16876d0e18b44f0",
+  "planner_system_prompt_sha256": "9005f8cb0ef427036b2b4c341c1a14c9e607073d99463774a7ce228dbfa9862c",
+  "planner": "openai/gpt-6-sol",
+  "settings_path": "C:\\Users\\khonz\\OneDrive - University of Cape Town\\Final Year\\EEE4022S\\UI\\ai_learner_host\\data\\settings.json",
+  "host_overrides_changed": {
+   "planner_provider": [
+    "gemini",
+    "openai"
+   ],
+   "planner_model": [
+    "gemini-3.1-pro-preview",
+    "gpt-6-sol"
+   ],
+   "heading_reply_settle_seconds": [
+    5.0,
+    10.0
+   ]
+  },
+  "rover_uri": "ws://192.168.137.178:81",
+  "camera_url": "http://196.47.239.247:8080/video",
+  "arena_mm": [
+   1710.0,
+   1254.0
+  ]
+ },
+ "status": "complete",
+ "placement": {
+  "ok": true,
+  "items": [
+   {
+    "name": "rover",
+    "ok": true,
+    "text": "\u0394 8 mm, 0.5\u00b0, conf 0.91",
+    "position_error_mm": 8.237718130647611,
+    "angle_error_deg": 0.5
+   }
+  ]
+ },
+ "run_id": "e9877803c94b",
+ "finish": {
+  "t": 25.503,
+  "status": "DONE",
+  "state": "COMPLETED",
+  "correction_rounds": 0,
+  "message": ""
+ },
+ "rounds": [
+  {
+   "index": 0,
+   "source": "planner",
+   "revision": 0,
+   "path_id": 10,
+   "commands": [
+    [
+     "TURN",
+     90
+    ],
+    [
+     "FWD",
+     800
+    ],
+    [
+     "STOP"
+    ]
+   ],
+   "t_plan_saved": 2.579,
+   "start_world_key": "W0",
+   "end_world_key": "after_0",
+   "t_path_sent": 2.607,
+   "t_path_ack": 12.589,
+   "command_acks": [
+    {
+     "i": 0,
+     "t": 5.269
+    },
+    {
+     "i": 1,
+     "t": 12.577
+    },
+    {
+     "i": 2,
+     "t": 12.589
+    }
+   ],
+   "nacks": [],
+   "verifier": {
+    "success": true,
+    "message": "The rover turned approximately 90\u00b0 right, traveled approximately 800 mm forward, and stopped safely.",
+    "latency_s": 2.537,
+    "has_correction": false,
+    "correction": null
+   },
+   "planner_latency_s": 2.35,
+   "t_end_capture": 22.894
+  }
+ ],
+ "worlds": {
+  "W0": {
+   "t": 0.0,
+   "role": "start",
+   "snapshot_id": "78f2a298c48a4b1b907244dced0dbc27",
+   "timestamp": "2026-10-17T00:42:49.493+00:00",
+   "scene": {
+    "schema": "ai_learner_world_state",
+    "schema_version": "1.0",
+    "coordinate_frame": {
+     "units": "mm",
+     "origin": "arena_bottom_left",
+     "x_axis": "right",
+     "y_axis": "up",
+     "heading": {
+      "0_deg": "+Y/up",
+      "90_deg": "+X/right",
+      "180_deg": "-Y/down",
+      "270_deg": "-X/left"
+     }
+    },
+    "arena": {
+     "width_mm": 1710.0,
+     "height_mm": 1254.0
+    },
+    "rover": {
+     "available": true,
+     "pose_valid": true,
+     "confidence": 0.906,
+     "footprint_mm": {
+      "length": 155.5,
+      "width": 121.3
+     },
+     "pose": {
+      "x_mm": 298.5,
+      "y_mm": 341.9,
+      "heading_deg": 359.5
+     },
+     "stale": false,
+     "age_s": 0.0
+    },
+    "obstacles": [],
+    "perception": {
+     "block_count": 0,
+     "rover_marker_id": 29,
+     "rover_marker_dictionary": "DICT_4X4_50"
+    }
+   },
+   "host_snapshot_id": "78f2a298c48a4b1b907244dced0dbc27"
+  },
+  "after_0": {
+   "t": 22.878,
+   "role": "after",
+   "snapshot_id": "e9ed6381fdf247dab054e5b9e15442c0",
+   "timestamp": "2026-10-17T00:43:17.796+00:00",
+   "scene": {
+    "schema": "ai_learner_world_state",
+    "schema_version": "1.0",
+    "coordinate_frame": {
+     "units": "mm",
+     "origin": "arena_bottom_left",
+     "x_axis": "right",
+     "y_axis": "up",
+     "heading": {
+      "0_deg": "+Y/up",
+      "90_deg": "+X/right",
+      "180_deg": "-Y/down",
+      "270_deg": "-X/left"
+     }
+    },
+    "arena": {
+     "width_mm": 1710.0,
+     "height_mm": 1254.0
+    },
+    "rover": {
+     "available": true,
+     "pose_valid": true,
+     "confidence": 0.885,
+     "footprint_mm": {
+      "length": 155.5,
+      "width": 121.3
+     },
+     "pose": {
+      "x_mm": 1121.2,
+      "y_mm": 326.6,
+      "heading_deg": 88.8
+     },
+     "stale": false,
+     "age_s": 0.0
+    },
+    "obstacles": [],
+    "perception": {
+     "block_count": 0,
+     "rover_marker_id": 29,
+     "rover_marker_dictionary": "DICT_4X4_50"
+    }
+   }
+  }
+ },
+ "planner_calls": [
+  {
+   "t_request": 0.229,
+   "prompt": "Turn right by 90 degrees, move forward 800 mm, then stop.",
+   "t_response": 2.579,
+   "latency_s": 2.35,
+   "raw_response": "{\"cmds\":[{\"op\":\"TURN\",\"value\":90},{\"op\":\"FWD\",\"value\":800},{\"op\":\"STOP\",\"value\":null}]}",
+   "commands": [
+    [
+     "TURN",
+     90.0
+    ],
+    [
+     "FWD",
+     800.0
+    ],
+    [
+     "STOP"
+    ]
+   ],
+   "fixed_plan": false
+  }
+ ],
+ "verifier_calls": [
+  {
+   "t_request": 22.929,
+   "path_id": 10,
+   "t_response": 25.466,
+   "latency_s": 2.537,
+   "success": true,
+   "message": "The rover turned approximately 90\u00b0 right, traveled approximately 800 mm forward, and stopped safely.",
+   "correction": null
+  }
+ ],
+ "events": [
+  {
+   "t": 12.589,
+   "kind": "path_ack",
+   "round": 0,
+   "path_id": 10
+  }
+ ],
+ "telemetry_vbat": [
+  [
+   0.987,
+   3.88
+  ],
+  [
+   1.999,
+   3.87
+  ],
+  [
+   3.027,
+   3.83
+  ],
+  [
+   4.015,
+   3.85
+  ],
+  [
+   5.184,
+   3.87
+  ],
+  [
+   6.144,
+   3.87
+  ],
+  [
+   7.135,
+   3.87
+  ],
+  [
+   8.124,
+   3.85
+  ],
+  [
+   9.104,
+   3.84
+  ],
+  [
+   10.088,
+   3.86
+  ],
+  [
+   11.071,
+   3.86
+  ],
+  [
+   12.089,
+   3.84
+  ],
+  [
+   13.086,
+   3.87
+  ],
+  [
+   14.093,
+   3.9
+  ],
+  [
+   15.092,
+   3.9
+  ],
+  [
+   16.106,
+   3.87
+  ],
+  [
+   17.218,
+   3.86
+  ],
+  [
+   18.21,
+   3.9
+  ],
+  [
+   19.179,
+   3.9
+  ],
+  [
+   20.171,
+   3.9
+  ],
+  [
+   21.153,
+   3.87
+  ],
+  [
+   22.161,
+   3.87
+  ],
+  [
+   23.167,
+   3.9
+  ],
+  [
+   24.153,
+   3.86
+  ],
+  [
+   25.152,
+   3.88
+  ]
+ ],
+ "timing": {
+  "planner_latency_s": 2.35,
+  "mission_time_s": 25.33434810000047
+ },
+ "trail": [
+  {
+   "t": 0.247,
+   "round": 0,
+   "x_mm": 298.6,
+   "y_mm": 342.0,
+   "heading_deg": 359.6,
+   "confidence": 0.906,
+   "detected": true
+  },
+  {
+   "t": 0.363,
+   "round": 0,
+   "x_mm": 298.6,
+   "y_mm": 341.9,
+   "heading_deg": 359.5,
+   "confidence": 0.906,
+   "detected": true
+  },
+  {
+   "t": 0.501,
+   "round": 0,
+   "x_mm": 298.5,
+   "y_mm": 341.9,
+   "heading_deg": 359.5,
+   "confidence": 0.906,
+   "detected": true
+  },
+  {
+   "t": 0.774,
+   "round": 0,
+   "x_mm": 298.5,
+   "y_mm": 342.0,
+   "heading_deg": 359.4,
+   "confidence": 0.906,
+   "detected": true
+  },
+  {
+   "t": 1.029,
+   "round": 0,
+   "x_mm": 298.5,
+   "y_mm": 341.9,
+   "heading_deg": 359.4,
+   "confidence": 0.906,
+   "detected": true
+  },
+  {
+   "t": 1.174,
+   "round": 0,
+   "x_mm": 298.5,
+   "y_mm": 341.8,
+   "heading_deg": 359.5,
+   "confidence": 0.906,
+   "detected": true
+  },
+  {
+   "t": 1.452,
+   "round": 0,
+   "x_mm": 298.6,
+   "y_mm": 341.8,
+   "heading_deg": 359.5,
+   "confidence": 0.906,
+   "detected": true
+  },
+  {
+   "t": 1.589,
+   "round": 0,
+   "x_mm": 298.6,
+   "y_mm": 341.9,
+   "heading_deg": 359.5,
+   "confidence": 0.907,
+   "detected": true
+  },
+  {
+   "t": 1.722,
+   "round": 0,
+   "x_mm": 298.6,
+   "y_mm": 341.9,
+   "heading_deg": 359.5,
+   "confidence": 0.906,
+   "detected": true
+  },
+  {
+   "t": 2.014,
+   "round": 0,
+   "x_mm": 298.6,
+   "y_mm": 341.8,
+   "heading_deg": 359.5,
+   "confidence": 0.906,
+   "detected": true
+  },
+  {
+   "t": 2.135,
+   "round": 0,
+   "x_mm": 298.6,
+   "y_mm": 341.9,
+   "heading_deg": 359.4,
+   "confidence": 0.907,
+   "detected": true
+  },
+  {
+   "t": 2.393,
+   "round": 0,
+   "x_mm": 298.5,
+   "y_mm": 342.0,
+   "heading_deg": 359.4,
+   "confidence": 0.906,
+   "detected": true
+  },
+  {
+   "t": 2.521,
+   "round": 0,
+   "x_mm": 298.4,
+   "y_mm": 341.9,
+   "heading_deg": 359.4,
+   "confidence": 0.907,
+   "detected": true
+  },
+  {
+   "t": 2.663,
+   "round": 0,
+   "x_mm": 298.4,
+   "y_mm": 342.0,
+   "heading_deg": 359.4,
+   "confidence": 0.906,
+   "detected": true
+  },
+  {
+   "t": 2.791,
+   "round": 0,
+   "x_mm": 298.5,
+   "y_mm": 341.9,
+   "heading_deg": 359.4,
+   "confidence": 0.906,
+   "detected": true
+  },
+  {
+   "t": 3.047,
+   "round": 0,
+   "x_mm": 298.5,
+   "y_mm": 342.0,
+   "heading_deg": 359.4,
+   "confidence": 0.906,
+   "detected": true
+  },
+  {
+   "t": 3.29,
+   "round": 0,
+   "x_mm": 298.6,
+   "y_mm": 341.9,
+   "heading_deg": 359.5,
+   "confidence": 0.907,
+   "detected": true
+  },
+  {
+   "t": 3.44,
+   "round": 0,
+   "x_mm": 298.6,
+   "y_mm": 341.9,
+   "heading_deg": 359.5,
+   "confidence": 0.907,
+   "detected": true
+  },
+  {
+   "t": 3.695,
+   "round": 0,
+   "x_mm": 298.5,
+   "y_mm": 341.9,
+   "heading_deg": 359.4,
+   "confidence": 0.906,
+   "detected": true
+  },
+  {
+   "t": 3.949,
+   "round": 0,
+   "x_mm": 298.5,
+   "y_mm": 342.0,
+   "heading_deg": 359.4,
+   "confidence": 0.906,
+   "detected": true
+  },
+  {
+   "t": 4.217,
+   "round": 0,
+   "x_mm": 298.5,
+   "y_mm": 342.0,
+   "heading_deg": 359.5,
+   "confidence": 0.906,
+   "detected": true
+  },
+  {
+   "t": 4.459,
+   "round": 0,
+   "x_mm": 298.4,
+   "y_mm": 341.9,
+   "heading_deg": 359.4,
+   "confidence": 0.906,
+   "detected": true
+  },
+  {
+   "t": 4.86,
+   "round": 0,
+   "x_mm": 298.6,
+   "y_mm": 341.9,
+   "heading_deg": 359.5,
+   "confidence": 0.906,
+   "detected": true
+  },
+  {
+   "t": 4.975,
+   "round": 0,
+   "x_mm": 298.5,
+   "y_mm": 341.9,
+   "heading_deg": 359.5,
+   "confidence": 0.906,
+   "detected": true
+  },
+  {
+   "t": 5.24,
+   "round": 0,
+   "x_mm": 298.4,
+   "y_mm": 341.8,
+   "heading_deg": 359.4,
+   "confidence": 0.906,
+   "detected": true
+  },
+  {
+   "t": 5.365,
+   "round": 0,
+   "x_mm": 298.5,
+   "y_mm": 341.9,
+   "heading_deg": 359.5,
+   "confidence": 0.906,
+   "detected": true
+  },
+  {
+   "t": 5.492,
+   "round": 0,
+   "x_mm": 298.5,
+   "y_mm": 342.0,
+   "heading_deg": 359.5,
+   "confidence": 0.906,
+   "detected": true
+  },
+  {
+   "t": 5.736,
+   "round": 0,
+   "x_mm": 299.1,
+   "y_mm": 345.8,
+   "heading_deg": 65.9,
+   "confidence": 0.879,
+   "detected": true
+  },
+  {
+   "t": 6.233,
+   "round": 0,
+   "x_mm": 299.6,
+   "y_mm": 347.0,
+   "heading_deg": 76.1,
+   "confidence": 0.879,
+   "detected": true
+  },
+  {
+   "t": 6.371,
+   "round": 0,
+   "x_mm": 299.8,
+   "y_mm": 346.7,
+   "heading_deg": 78.9,
+   "confidence": 0.879,
+   "detected": true
+  },
+  {
+   "t": 6.497,
+   "round": 0,
+   "x_mm": 300.1,
+   "y_mm": 346.8,
+   "heading_deg": 81.9,
+   "confidence": 0.878,
+   "detected": true
+  },
+  {
+   "t": 6.753,
+   "round": 0,
+   "x_mm": 300.5,
+   "y_mm": 346.2,
+   "heading_deg": 85.5,
+   "confidence": 0.879,
+   "detected": true
+  },
+  {
+   "t": 6.877,
+   "round": 0,
+   "x_mm": 300.6,
+   "y_mm": 346.5,
+   "heading_deg": 87.6,
+   "confidence": 0.88,
+   "detected": true
+  },
+  {
+   "t": 7.002,
+   "round": 0,
+   "x_mm": 300.7,
+   "y_mm": 346.3,
+   "heading_deg": 89.9,
+   "confidence": 0.879,
+   "detected": true
+  },
+  {
+   "t": 7.123,
+   "round": 0,
+   "x_mm": 302.5,
+   "y_mm": 346.5,
+   "heading_deg": 89.9,
+   "confidence": 0.882,
+   "detected": true
+  },
+  {
+   "t": 7.402,
+   "round": 0,
+   "x_mm": 303.3,
+   "y_mm": 346.5,
+   "heading_deg": 89.8,
+   "confidence": 0.882,
+   "detected": true
+  },
+  {
+   "t": 7.664,
+   "round": 0,
+   "x_mm": 303.5,
+   "y_mm": 346.3,
+   "heading_deg": 90.0,
+   "confidence": 0.882,
+   "detected": true
+  },
+  {
+   "t": 7.802,
+   "round": 0,
+   "x_mm": 303.5,
+   "y_mm": 346.3,
+   "heading_deg": 90.0,
+   "confidence": 0.882,
+   "detected": true
+  },
+  {
+   "t": 8.062,
+   "round": 0,
+   "x_mm": 303.3,
+   "y_mm": 346.3,
+   "heading_deg": 89.9,
+   "confidence": 0.883,
+   "detected": true
+  },
+  {
+   "t": 8.178,
+   "round": 0,
+   "x_mm": 303.4,
+   "y_mm": 346.4,
+   "heading_deg": 89.9,
+   "confidence": 0.882,
+   "detected": true
+  },
+  {
+   "t": 8.304,
+   "round": 0,
+   "x_mm": 303.4,
+   "y_mm": 346.4,
+   "heading_deg": 89.9,
+   "confidence": 0.882,
+   "detected": true
+  },
+  {
+   "t": 8.698,
+   "round": 0,
+   "x_mm": 303.4,
+   "y_mm": 346.6,
+   "heading_deg": 89.7,
+   "confidence": 0.882,
+   "detected": true
+  },
+  {
+   "t": 8.832,
+   "round": 0,
+   "x_mm": 364.1,
+   "y_mm": 344.3,
+   "heading_deg": 89.5,
+   "confidence": 0.876,
+   "detected": true
+  },
+  {
+   "t": 9.088,
+   "round": 0,
+   "x_mm": 391.6,
+   "y_mm": 343.4,
+   "heading_deg": 89.2,
+   "confidence": 0.875,
+   "detected": true
+  },
+  {
+   "t": 9.355,
+   "round": 0,
+   "x_mm": 403.0,
+   "y_mm": 342.4,
+   "heading_deg": 89.3,
+   "confidence": 0.875,
+   "detected": true
+  },
+  {
+   "t": 9.591,
+   "round": 0,
+   "x_mm": 408.1,
+   "y_mm": 342.7,
+   "heading_deg": 89.1,
+   "confidence": 0.876,
+   "detected": true
+  },
+  {
+   "t": 9.858,
+   "round": 0,
+   "x_mm": 412.6,
+   "y_mm": 343.2,
+   "heading_deg": 88.6,
+   "confidence": 0.876,
+   "detected": true
+  },
+  {
+   "t": 9.972,
+   "round": 0,
+   "x_mm": 415.5,
+   "y_mm": 342.8,
+   "heading_deg": 88.8,
+   "confidence": 0.877,
+   "detected": true
+  },
+  {
+   "t": 10.349,
+   "round": 0,
+   "x_mm": 421.3,
+   "y_mm": 342.5,
+   "heading_deg": 89.0,
+   "confidence": 0.876,
+   "detected": true
+  },
+  {
+   "t": 10.47,
+   "round": 0,
+   "x_mm": 524.6,
+   "y_mm": 340.8,
+   "heading_deg": 88.8,
+   "confidence": 0.874,
+   "detected": true
+  },
+  {
+   "t": 10.594,
+   "round": 0,
+   "x_mm": 568.9,
+   "y_mm": 340.0,
+   "heading_deg": 88.7,
+   "confidence": 0.874,
+   "detected": true
+  },
+  {
+   "t": 10.848,
+   "round": 0,
+   "x_mm": 593.8,
+   "y_mm": 339.0,
+   "heading_deg": 88.8,
+   "confidence": 0.873,
+   "detected": true
+  },
+  {
+   "t": 11.117,
+   "round": 0,
+   "x_mm": 600.6,
+   "y_mm": 339.3,
+   "heading_deg": 88.5,
+   "confidence": 0.875,
+   "detected": true
+  },
+  {
+   "t": 11.242,
+   "round": 0,
+   "x_mm": 603.7,
+   "y_mm": 339.2,
+   "heading_deg": 88.7,
+   "confidence": 0.874,
+   "detected": true
+  },
+  {
+   "t": 11.654,
+   "round": 0,
+   "x_mm": 609.1,
+   "y_mm": 339.2,
+   "heading_deg": 88.4,
+   "confidence": 0.874,
+   "detected": true
+  },
+  {
+   "t": 11.795,
+   "round": 0,
+   "x_mm": 612.6,
+   "y_mm": 339.4,
+   "heading_deg": 88.2,
+   "confidence": 0.875,
+   "detected": true
+  },
+  {
+   "t": 11.939,
+   "round": 0,
+   "x_mm": 616.8,
+   "y_mm": 339.2,
+   "heading_deg": 88.4,
+   "confidence": 0.874,
+   "detected": true
+  },
+  {
+   "t": 12.348,
+   "round": 0,
+   "x_mm": 766.3,
+   "y_mm": 336.4,
+   "heading_deg": 89.4,
+   "confidence": 0.875,
+   "detected": true
+  },
+  {
+   "t": 12.748,
+   "round": 0,
+   "x_mm": 774.7,
+   "y_mm": 336.0,
+   "heading_deg": 89.4,
+   "confidence": 0.875,
+   "detected": true
+  },
+  {
+   "t": 12.878,
+   "round": 0,
+   "x_mm": 778.0,
+   "y_mm": 336.0,
+   "heading_deg": 89.5,
+   "confidence": 0.876,
+   "detected": true
+  },
+  {
+   "t": 13.139,
+   "round": 0,
+   "x_mm": 782.9,
+   "y_mm": 336.2,
+   "heading_deg": 89.2,
+   "confidence": 0.875,
+   "detected": true
+  },
+  {
+   "t": 13.271,
+   "round": 0,
+   "x_mm": 786.3,
+   "y_mm": 336.0,
+   "heading_deg": 89.4,
+   "confidence": 0.875,
+   "detected": true
+  },
+  {
+   "t": 13.529,
+   "round": 0,
+   "x_mm": 914.3,
+   "y_mm": 332.2,
+   "heading_deg": 89.4,
+   "confidence": 0.878,
+   "detected": true
+  },
+  {
+   "t": 13.666,
+   "round": 0,
+   "x_mm": 929.2,
+   "y_mm": 331.8,
+   "heading_deg": 89.3,
+   "confidence": 0.878,
+   "detected": true
+  },
+  {
+   "t": 14.035,
+   "round": 0,
+   "x_mm": 940.2,
+   "y_mm": 331.8,
+   "heading_deg": 88.9,
+   "confidence": 0.878,
+   "detected": true
+  },
+  {
+   "t": 14.279,
+   "round": 0,
+   "x_mm": 948.6,
+   "y_mm": 331.2,
+   "heading_deg": 89.6,
+   "confidence": 0.878,
+   "detected": true
+  },
+  {
+   "t": 14.54,
+   "round": 0,
+   "x_mm": 953.6,
+   "y_mm": 331.5,
+   "heading_deg": 89.5,
+   "confidence": 0.878,
+   "detected": true
+  },
+  {
+   "t": 14.685,
+   "round": 0,
+   "x_mm": 957.1,
+   "y_mm": 331.5,
+   "heading_deg": 89.3,
+   "confidence": 0.878,
+   "detected": true
+  },
+  {
+   "t": 14.821,
+   "round": 0,
+   "x_mm": 1071.5,
+   "y_mm": 328.3,
+   "heading_deg": 89.2,
+   "confidence": 0.886,
+   "detected": true
+  },
+  {
+   "t": 15.19,
+   "round": 0,
+   "x_mm": 1121.3,
+   "y_mm": 326.7,
+   "heading_deg": 88.8,
+   "confidence": 0.886,
+   "detected": true
+  },
+  {
+   "t": 15.313,
+   "round": 0,
+   "x_mm": 1122.1,
+   "y_mm": 326.6,
+   "heading_deg": 88.8,
+   "confidence": 0.885,
+   "detected": true
+  },
+  {
+   "t": 15.559,
+   "round": 0,
+   "x_mm": 1121.5,
+   "y_mm": 326.7,
+   "heading_deg": 88.7,
+   "confidence": 0.886,
+   "detected": true
+  },
+  {
+   "t": 15.957,
+   "round": 0,
+   "x_mm": 1121.5,
+   "y_mm": 326.6,
+   "heading_deg": 88.8,
+   "confidence": 0.886,
+   "detected": true
+  },
+  {
+   "t": 16.096,
+   "round": 0,
+   "x_mm": 1121.4,
+   "y_mm": 326.4,
+   "heading_deg": 88.9,
+   "confidence": 0.886,
+   "detected": true
+  },
+  {
+   "t": 16.501,
+   "round": 0,
+   "x_mm": 1121.3,
+   "y_mm": 326.7,
+   "heading_deg": 88.8,
+   "confidence": 0.886,
+   "detected": true
+  },
+  {
+   "t": 16.646,
+   "round": 0,
+   "x_mm": 1121.3,
+   "y_mm": 326.7,
+   "heading_deg": 88.8,
+   "confidence": 0.886,
+   "detected": true
+  },
+  {
+   "t": 16.77,
+   "round": 0,
+   "x_mm": 1121.4,
+   "y_mm": 326.6,
+   "heading_deg": 88.9,
+   "confidence": 0.886,
+   "detected": true
+  },
+  {
+   "t": 17.185,
+   "round": 0,
+   "x_mm": 1121.4,
+   "y_mm": 326.5,
+   "heading_deg": 89.0,
+   "confidence": 0.886,
+   "detected": true
+  },
+  {
+   "t": 17.304,
+   "round": 0,
+   "x_mm": 1121.4,
+   "y_mm": 326.6,
+   "heading_deg": 88.7,
+   "confidence": 0.885,
+   "detected": true
+  },
+  {
+   "t": 17.428,
+   "round": 0,
+   "x_mm": 1121.3,
+   "y_mm": 326.5,
+   "heading_deg": 88.9,
+   "confidence": 0.886,
+   "detected": true
+  },
+  {
+   "t": 17.83,
+   "round": 0,
+   "x_mm": 1121.2,
+   "y_mm": 326.5,
+   "heading_deg": 88.9,
+   "confidence": 0.885,
+   "detected": true
+  },
+  {
+   "t": 17.946,
+   "round": 0,
+   "x_mm": 1121.2,
+   "y_mm": 326.5,
+   "heading_deg": 88.9,
+   "confidence": 0.885,
+   "detected": true
+  },
+  {
+   "t": 18.069,
+   "round": 0,
+   "x_mm": 1121.1,
+   "y_mm": 326.5,
+   "heading_deg": 89.0,
+   "confidence": 0.885,
+   "detected": true
+  },
+  {
+   "t": 18.32,
+   "round": 0,
+   "x_mm": 1121.2,
+   "y_mm": 326.5,
+   "heading_deg": 89.0,
+   "confidence": 0.885,
+   "detected": true
+  },
+  {
+   "t": 18.458,
+   "round": 0,
+   "x_mm": 1121.2,
+   "y_mm": 326.6,
+   "heading_deg": 88.8,
+   "confidence": 0.885,
+   "detected": true
+  },
+  {
+   "t": 18.71,
+   "round": 0,
+   "x_mm": 1121.1,
+   "y_mm": 326.5,
+   "heading_deg": 89.0,
+   "confidence": 0.885,
+   "detected": true
+  },
+  {
+   "t": 18.989,
+   "round": 0,
+   "x_mm": 1121.2,
+   "y_mm": 326.4,
+   "heading_deg": 89.0,
+   "confidence": 0.885,
+   "detected": true
+  },
+  {
+   "t": 19.127,
+   "round": 0,
+   "x_mm": 1121.2,
+   "y_mm": 326.4,
+   "heading_deg": 88.9,
+   "confidence": 0.886,
+   "detected": true
+  },
+  {
+   "t": 19.231,
+   "round": 0,
+   "x_mm": 1121.2,
+   "y_mm": 326.5,
+   "heading_deg": 88.8,
+   "confidence": 0.886,
+   "detected": true
+  },
+  {
+   "t": 19.359,
+   "round": 0,
+   "x_mm": 1121.2,
+   "y_mm": 326.6,
+   "heading_deg": 88.8,
+   "confidence": 0.886,
+   "detected": true
+  },
+  {
+   "t": 19.734,
+   "round": 0,
+   "x_mm": 1121.2,
+   "y_mm": 326.6,
+   "heading_deg": 88.8,
+   "confidence": 0.885,
+   "detected": true
+  },
+  {
+   "t": 19.855,
+   "round": 0,
+   "x_mm": 1121.2,
+   "y_mm": 326.6,
+   "heading_deg": 88.8,
+   "confidence": 0.886,
+   "detected": true
+  },
+  {
+   "t": 20.238,
+   "round": 0,
+   "x_mm": 1121.2,
+   "y_mm": 326.5,
+   "heading_deg": 88.8,
+   "confidence": 0.886,
+   "detected": true
+  },
+  {
+   "t": 20.495,
+   "round": 0,
+   "x_mm": 1121.1,
+   "y_mm": 326.5,
+   "heading_deg": 89.0,
+   "confidence": 0.885,
+   "detected": true
+  },
+  {
+   "t": 20.905,
+   "round": 0,
+   "x_mm": 1121.4,
+   "y_mm": 326.6,
+   "heading_deg": 89.0,
+   "confidence": 0.885,
+   "detected": true
+  },
+  {
+   "t": 21.046,
+   "round": 0,
+   "x_mm": 1121.4,
+   "y_mm": 326.5,
+   "heading_deg": 88.8,
+   "confidence": 0.886,
+   "detected": true
+  },
+  {
+   "t": 21.186,
+   "round": 0,
+   "x_mm": 1121.3,
+   "y_mm": 326.6,
+   "heading_deg": 88.8,
+   "confidence": 0.886,
+   "detected": true
+  },
+  {
+   "t": 21.461,
+   "round": 0,
+   "x_mm": 1121.3,
+   "y_mm": 326.6,
+   "heading_deg": 88.8,
+   "confidence": 0.885,
+   "detected": true
+  },
+  {
+   "t": 21.617,
+   "round": 0,
+   "x_mm": 1121.3,
+   "y_mm": 326.6,
+   "heading_deg": 88.8,
+   "confidence": 0.886,
+   "detected": true
+  },
+  {
+   "t": 21.731,
+   "round": 0,
+   "x_mm": 1121.3,
+   "y_mm": 326.6,
+   "heading_deg": 88.8,
+   "confidence": 0.886,
+   "detected": true
+  },
+  {
+   "t": 22.009,
+   "round": 0,
+   "x_mm": 1121.2,
+   "y_mm": 326.6,
+   "heading_deg": 88.9,
+   "confidence": 0.885,
+   "detected": true
+  },
+  {
+   "t": 22.151,
+   "round": 0,
+   "x_mm": 1121.3,
+   "y_mm": 326.5,
+   "heading_deg": 88.8,
+   "confidence": 0.886,
+   "detected": true
+  },
+  {
+   "t": 22.291,
+   "round": 0,
+   "x_mm": 1121.2,
+   "y_mm": 326.5,
+   "heading_deg": 88.9,
+   "confidence": 0.886,
+   "detected": true
+  },
+  {
+   "t": 22.693,
+   "round": 0,
+   "x_mm": 1121.1,
+   "y_mm": 326.5,
+   "heading_deg": 88.8,
+   "confidence": 0.885,
+   "detected": true
+  },
+  {
+   "t": 22.836,
+   "round": 0,
+   "x_mm": 1121.2,
+   "y_mm": 326.6,
+   "heading_deg": 88.7,
+   "confidence": 0.885,
+   "detected": true
+  },
+  {
+   "t": 22.957,
+   "round": 0,
+   "x_mm": 1121.2,
+   "y_mm": 326.6,
+   "heading_deg": 88.8,
+   "confidence": 0.885,
+   "detected": true
+  },
+  {
+   "t": 23.079,
+   "round": 0,
+   "x_mm": 1121.3,
+   "y_mm": 326.5,
+   "heading_deg": 88.8,
+   "confidence": 0.886,
+   "detected": true
+  },
+  {
+   "t": 23.343,
+   "round": 0,
+   "x_mm": 1121.3,
+   "y_mm": 326.7,
+   "heading_deg": 88.6,
+   "confidence": 0.886,
+   "detected": true
+  },
+  {
+   "t": 23.451,
+   "round": 0,
+   "x_mm": 1121.3,
+   "y_mm": 326.7,
+   "heading_deg": 88.6,
+   "confidence": 0.886,
+   "detected": true
+  },
+  {
+   "t": 23.577,
+   "round": 0,
+   "x_mm": 1121.2,
+   "y_mm": 326.4,
+   "heading_deg": 88.9,
+   "confidence": 0.886,
+   "detected": true
+  },
+  {
+   "t": 23.956,
+   "round": 0,
+   "x_mm": 1121.2,
+   "y_mm": 326.6,
+   "heading_deg": 88.7,
+   "confidence": 0.885,
+   "detected": true
+  },
+  {
+   "t": 24.076,
+   "round": 0,
+   "x_mm": 1121.4,
+   "y_mm": 326.6,
+   "heading_deg": 88.9,
+   "confidence": 0.886,
+   "detected": true
+  },
+  {
+   "t": 24.197,
+   "round": 0,
+   "x_mm": 1121.3,
+   "y_mm": 326.5,
+   "heading_deg": 88.8,
+   "confidence": 0.887,
+   "detected": true
+  },
+  {
+   "t": 24.34,
+   "round": 0,
+   "x_mm": 1121.2,
+   "y_mm": 326.4,
+   "heading_deg": 89.1,
+   "confidence": 0.885,
+   "detected": true
+  },
+  {
+   "t": 24.616,
+   "round": 0,
+   "x_mm": 1121.3,
+   "y_mm": 326.6,
+   "heading_deg": 88.8,
+   "confidence": 0.886,
+   "detected": true
+  },
+  {
+   "t": 24.888,
+   "round": 0,
+   "x_mm": 1121.2,
+   "y_mm": 326.6,
+   "heading_deg": 88.8,
+   "confidence": 0.885,
+   "detected": true
+  },
+  {
+   "t": 25.137,
+   "round": 0,
+   "x_mm": 1121.2,
+   "y_mm": 326.7,
+   "heading_deg": 88.8,
+   "confidence": 0.885,
+   "detected": true
+  },
+  {
+   "t": 25.407,
+   "round": 0,
+   "x_mm": 1121.2,
+   "y_mm": 326.6,
+   "heading_deg": 88.7,
+   "confidence": 0.885,
+   "detected": true
+  },
+  {
+   "t": 25.824,
+   "round": 0,
+   "x_mm": 1121.3,
+   "y_mm": 326.4,
+   "heading_deg": 88.9,
+   "confidence": 0.886,
+   "detected": true
+  },
+  {
+   "t": 25.95,
+   "round": 0,
+   "x_mm": 1121.3,
+   "y_mm": 326.3,
+   "heading_deg": 88.9,
+   "confidence": 0.885,
+   "detected": true
+  }
+ ],
+ "recorder_errors": [],
+ "annotations": {},
+ "scores": {
+  "goal": {
+   "x_mm": 1100.0,
+   "y_mm": 350.0,
+   "position_tolerance_mm": 50.0,
+   "require_heading": true,
+   "heading_deg": 90.0,
+   "heading_tolerance_deg": 10.0
+  },
+  "first_pass_success": true,
+  "closed_loop_success": true,
+  "corrections_used": 0,
+  "replay_success": true,
+  "first_pass_goal_error_mm": 31.575306807693902,
+  "first_pass_heading_error_deg": 1.1999999999999886,
+  "final_goal_error_mm": 31.575306807693902,
+  "e_pos_mm": 31.8,
+  "e_theta_deg": 0.7,
+  "collision_any_round": false,
+  "boundary_violation_any_round": false,
+  "min_block_clearance_mm": null,
+  "min_block_clearance_first_pass_mm": null,
+  "replay_min_block_clearance_mm": null,
+  "reference_path_mm": 801.5,
+  "reference_path": [
+   [
+    298.5,
+    341.9
+   ],
+   [
+    1100.0,
+    350.0
+   ]
+  ],
+  "driven_path_first_pass_mm": 823.0,
+  "driven_path_total_mm": 823.0,
+  "path_efficiency_first_pass": 0.974,
+  "plan_commands_first_pass": 3,
+  "plan_rotation_first_pass_deg": 90.0,
+  "planning_latency_s": 2.35,
+  "drive_time_first_pass_s": 9.98,
+  "mission_time_s": 25.33,
+  "verifier_agreement": [
+   true
+  ],
+  "camera_tape": null,
+  "attribution": {
+   "first_pass": null,
+   "closed_loop": null,
+   "detail": "",
+   "confirmed_by_tape": null,
+   "verifier_disagreed_rounds": []
+  },
+  "rounds": [
+   {
+    "index": 0,
+    "source": "planner",
+    "commands": [
+     [
+      "TURN",
+      90
+     ],
+     [
+      "FWD",
+      800
+     ],
+     [
+      "STOP"
+     ]
+    ],
+    "n_commands": 3,
+    "score": {
+     "success": true,
+     "final_x_mm": 1121.2,
+     "final_y_mm": 326.6,
+     "final_heading_deg": 88.8,
+     "goal_position_error_mm": 31.575306807693902,
+     "goal_heading_error_deg": 1.1999999999999886,
+     "position_ok": true,
+     "heading_ok": true,
+     "stop_reached": true,
+     "collision": false,
+     "collision_evidence": [],
+     "boundary_violation": false,
+     "pose_available": true
+    },
+    "trail": {
+     "samples": 120,
+     "valid_samples": 120,
+     "marker_lost_fraction": 0.0,
+     "path_length_mm": 823.0147709367081,
+     "rotation_deg": 90.29999999999995,
+     "min_block_clearance_mm": null,
+     "min_boundary_clearance_mm": 203.36190029799997,
+     "trail_overlaps_block": false,
+     "trail_leaves_arena": false
+    },
+    "block_displacement_mm": {},
+    "replay": {
+     "success": true,
+     "final_pose": [
+      1098.5,
+      348.9,
+      89.5
+     ],
+     "position_error_mm": 1.9,
+     "failure_reason": null,
+     "min_block_clearance_mm": null,
+     "min_boundary_clearance_mm": 199.9,
+     "travel_mm": 800.0,
+     "rotation_deg": 90.0,
+     "path": [
+      [
+       298.5,
+       341.9,
+       359.5
+      ],
+      [
+       298.5,
+       341.9,
+       0.5
+      ],
+      [
+       298.5,
+       341.9,
+       1.5
+      ],
+      [
+       298.5,
+       341.9,
+       2.5
+      ],
+      [
+       298.5,
+       341.9,
+       3.5
+      ],
+      [
+       298.5,
+       341.9,
+       4.5
+      ],
+      [
+       298.5,
+       341.9,
+       5.5
+      ],
+      [
+       298.5,
+       341.9,
+       6.5
+      ],
+      [
+       298.5,
+       341.9,
+       7.5
+      ],
+      [
+       298.5,
+       341.9,
+       8.5
+      ],
+      [
+       298.5,
+       341.9,
+       9.5
+      ],
+      [
+       298.5,
+       341.9,
+       10.5
+      ],
+      [
+       298.5,
+       341.9,
+       11.5
+      ],
+      [
+       298.5,
+       341.9,
+       12.5
+      ],
+      [
+       298.5,
+       341.9,
+       13.5
+      ],
+      [
+       298.5,
+       341.9,
+       14.5
+      ],
+      [
+       298.5,
+       341.9,
+       15.5
+      ],
+      [
+       298.5,
+       341.9,
+       16.5
+      ],
+      [
+       298.5,
+       341.9,
+       17.5
+      ],
+      [
+       298.5,
+       341.9,
+       18.5
+      ],
+      [
+       298.5,
+       341.9,
+       19.5
+      ],
+      [
+       298.5,
+       341.9,
+       20.5
+      ],
+      [
+       298.5,
+       341.9,
+       21.5
+      ],
+      [
+       298.5,
+       341.9,
+       22.5
+      ],
+      [
+       298.5,
+       341.9,
+       23.5
+      ],
+      [
+       298.5,
+       341.9,
+       24.5
+      ],
+      [
+       298.5,
+       341.9,
+       25.5
+      ],
+      [
+       298.5,
+       341.9,
+       26.5
+      ],
+      [
+       298.5,
+       341.9,
+       27.5
+      ],
+      [
+       298.5,
+       341.9,
+       28.5
+      ],
+      [
+       298.5,
+       341.9,
+       29.5
+      ],
+      [
+       298.5,
+       341.9,
+       30.5
+      ],
+      [
+       298.5,
+       341.9,
+       31.5
+      ],
+      [
+       298.5,
+       341.9,
+       32.5
+      ],
+      [
+       298.5,
+       341.9,
+       33.5
+      ],
+      [
+       298.5,
+       341.9,
+       34.5
+      ],
+      [
+       298.5,
+       341.9,
+       35.5
+      ],
+      [
+       298.5,
+       341.9,
+       36.5
+      ],
+      [
+       298.5,
+       341.9,
+       37.5
+      ],
+      [
+       298.5,
+       341.9,
+       38.5
+      ],
+      [
+       298.5,
+       341.9,
+       39.5
+      ],
+      [
+       298.5,
+       341.9,
+       40.5
+      ],
+      [
+       298.5,
+       341.9,
+       41.5
+      ],
+      [
+       298.5,
+       341.9,
+       42.5
+      ],
+      [
+       298.5,
+       341.9,
+       43.5
+      ],
+      [
+       298.5,
+       341.9,
+       44.5
+      ],
+      [
+       298.5,
+       341.9,
+       45.5
+      ],
+      [
+       298.5,
+       341.9,
+       46.5
+      ],
+      [
+       298.5,
+       341.9,
+       47.5
+      ],
+      [
+       298.5,
+       341.9,
+       48.5
+      ],
+      [
+       298.5,
+       341.9,
+       49.5
+      ],
+      [
+       298.5,
+       341.9,
+       50.5
+      ],
+      [
+       298.5,
+       341.9,
+       51.5
+      ],
+      [
+       298.5,
+       341.9,
+       52.5
+      ],
+      [
+       298.5,
+       341.9,
+       53.5
+      ],
+      [
+       298.5,
+       341.9,
+       54.5
+      ],
+      [
+       298.5,
+       341.9,
+       55.5
+      ],
+      [
+       298.5,
+       341.9,
+       56.5
+      ],
+      [
+       298.5,
+       341.9,
+       57.5
+      ],
+      [
+       298.5,
+       341.9,
+       58.5
+      ],
+      [
+       298.5,
+       341.9,
+       59.5
+      ],
+      [
+       298.5,
+       341.9,
+       60.5
+      ],
+      [
+       298.5,
+       341.9,
+       61.5
+      ],
+      [
+       298.5,
+       341.9,
+       62.5
+      ],
+      [
+       298.5,
+       341.9,
+       63.5
+      ],
+      [
+       298.5,
+       341.9,
+       64.5
+      ],
+      [
+       298.5,
+       341.9,
+       65.5
+      ],
+      [
+       298.5,
+       341.9,
+       66.5
+      ],
+      [
+       298.5,
+       341.9,
+       67.5
+      ],
+      [
+       298.5,
+       341.9,
+       68.5
+      ],
+      [
+       298.5,
+       341.9,
+       69.5
+      ],
+      [
+       298.5,
+       341.9,
+       70.5
+      ],
+      [
+       298.5,
+       341.9,
+       71.5
+      ],
+      [
+       298.5,
+       341.9,
+       72.5
+      ],
+      [
+       298.5,
+       341.9,
+       73.5
+      ],
+      [
+       298.5,
+       341.9,
+       74.5
+      ],
+      [
+       298.5,
+       341.9,
+       75.5
+      ],
+      [
+       298.5,
+       341.9,
+       76.5
+      ],
+      [
+       298.5,
+       341.9,
+       77.5
+      ],
+      [
+       298.5,
+       341.9,
+       78.5
+      ],
+      [
+       298.5,
+       341.9,
+       79.5
+      ],
+      [
+       298.5,
+       341.9,
+       80.5
+      ],
+      [
+       298.5,
+       341.9,
+       81.5
+      ],
+      [
+       298.5,
+       341.9,
+       82.5
+      ],
+      [
+       298.5,
+       341.9,
+       83.5
+      ],
+      [
+       298.5,
+       341.9,
+       84.5
+      ],
+      [
+       298.5,
+       341.9,
+       85.5
+      ],
+      [
+       298.5,
+       341.9,
+       86.5
+      ],
+      [
+       298.5,
+       341.9,
+       87.5
+      ],
+      [
+       298.5,
+       341.9,
+       88.5
+      ],
+      [
+       298.5,
+       341.9,
+       89.5
+      ],
+      [
+       303.5,
+       341.9,
+       89.5
+      ],
+      [
+       308.5,
+       342.0,
+       89.5
+      ],
+      [
+       313.5,
+       342.0,
+       89.5
+      ],
+      [
+       318.5,
+       342.1,
+       89.5
+      ],
+      [
+       323.5,
+       342.1,
+       89.5
+      ],
+      [
+       328.5,
+       342.2,
+       89.5
+      ],
+      [
+       333.5,
+       342.2,
+       89.5
+      ],
+      [
+       338.5,
+       342.2,
+       89.5
+      ],
+      [
+       343.5,
+       342.3,
+       89.5
+      ],
+      [
+       348.5,
+       342.3,
+       89.5
+      ],
+      [
+       353.5,
+       342.4,
+       89.5
+      ],
+      [
+       358.5,
+       342.4,
+       89.5
+      ],
+      [
+       363.5,
+       342.5,
+       89.5
+      ],
+      [
+       368.5,
+       342.5,
+       89.5
+      ],
+      [
+       373.5,
+       342.6,
+       89.5
+      ],
+      [
+       378.5,
+       342.6,
+       89.5
+      ],
+      [
+       383.5,
+       342.6,
+       89.5
+      ],
+      [
+       388.5,
+       342.7,
+       89.5
+      ],
+      [
+       393.5,
+       342.7,
+       89.5
+      ],
+      [
+       398.5,
+       342.8,
+       89.5
+      ],
+      [
+       403.5,
+       342.8,
+       89.5
+      ],
+      [
+       408.5,
+       342.9,
+       89.5
+      ],
+      [
+       413.5,
+       342.9,
+       89.5
+      ],
+      [
+       418.5,
+       342.9,
+       89.5
+      ],
+      [
+       423.5,
+       343.0,
+       89.5
+      ],
+      [
+       428.5,
+       343.0,
+       89.5
+      ],
+      [
+       433.5,
+       343.1,
+       89.5
+      ],
+      [
+       438.5,
+       343.1,
+       89.5
+      ],
+      [
+       443.5,
+       343.2,
+       89.5
+      ],
+      [
+       448.5,
+       343.2,
+       89.5
+      ],
+      [
+       453.5,
+       343.3,
+       89.5
+      ],
+      [
+       458.5,
+       343.3,
+       89.5
+      ],
+      [
+       463.5,
+       343.3,
+       89.5
+      ],
+      [
+       468.5,
+       343.4,
+       89.5
+      ],
+      [
+       473.5,
+       343.4,
+       89.5
+      ],
+      [
+       478.5,
+       343.5,
+       89.5
+      ],
+      [
+       483.5,
+       343.5,
+       89.5
+      ],
+      [
+       488.5,
+       343.6,
+       89.5
+      ],
+      [
+       493.5,
+       343.6,
+       89.5
+      ],
+      [
+       498.5,
+       343.6,
+       89.5
+      ],
+      [
+       503.5,
+       343.7,
+       89.5
+      ],
+      [
+       508.5,
+       343.7,
+       89.5
+      ],
+      [
+       513.5,
+       343.8,
+       89.5
+      ],
+      [
+       518.5,
+       343.8,
+       89.5
+      ],
+      [
+       523.5,
+       343.9,
+       89.5
+      ],
+      [
+       528.5,
+       343.9,
+       89.5
+      ],
+      [
+       533.5,
+       344.0,
+       89.5
+      ],
+      [
+       538.5,
+       344.0,
+       89.5
+      ],
+      [
+       543.5,
+       344.0,
+       89.5
+      ],
+      [
+       548.5,
+       344.1,
+       89.5
+      ],
+      [
+       553.5,
+       344.1,
+       89.5
+      ],
+      [
+       558.5,
+       344.2,
+       89.5
+      ],
+      [
+       563.5,
+       344.2,
+       89.5
+      ],
+      [
+       568.5,
+       344.3,
+       89.5
+      ],
+      [
+       573.5,
+       344.3,
+       89.5
+      ],
+      [
+       578.5,
+       344.3,
+       89.5
+      ],
+      [
+       583.5,
+       344.4,
+       89.5
+      ],
+      [
+       588.5,
+       344.4,
+       89.5
+      ],
+      [
+       593.5,
+       344.5,
+       89.5
+      ],
+      [
+       598.5,
+       344.5,
+       89.5
+      ],
+      [
+       603.5,
+       344.6,
+       89.5
+      ],
+      [
+       608.5,
+       344.6,
+       89.5
+      ],
+      [
+       613.5,
+       344.6,
+       89.5
+      ],
+      [
+       618.5,
+       344.7,
+       89.5
+      ],
+      [
+       623.5,
+       344.7,
+       89.5
+      ],
+      [
+       628.5,
+       344.8,
+       89.5
+      ],
+      [
+       633.5,
+       344.8,
+       89.5
+      ],
+      [
+       638.5,
+       344.9,
+       89.5
+      ],
+      [
+       643.5,
+       344.9,
+       89.5
+      ],
+      [
+       648.5,
+       345.0,
+       89.5
+      ],
+      [
+       653.5,
+       345.0,
+       89.5
+      ],
+      [
+       658.5,
+       345.0,
+       89.5
+      ],
+      [
+       663.5,
+       345.1,
+       89.5
+      ],
+      [
+       668.5,
+       345.1,
+       89.5
+      ],
+      [
+       673.5,
+       345.2,
+       89.5
+      ],
+      [
+       678.5,
+       345.2,
+       89.5
+      ],
+      [
+       683.5,
+       345.3,
+       89.5
+      ],
+      [
+       688.5,
+       345.3,
+       89.5
+      ],
+      [
+       693.5,
+       345.3,
+       89.5
+      ],
+      [
+       698.5,
+       345.4,
+       89.5
+      ],
+      [
+       703.5,
+       345.4,
+       89.5
+      ],
+      [
+       708.5,
+       345.5,
+       89.5
+      ],
+      [
+       713.5,
+       345.5,
+       89.5
+      ],
+      [
+       718.5,
+       345.6,
+       89.5
+      ],
+      [
+       723.5,
+       345.6,
+       89.5
+      ],
+      [
+       728.5,
+       345.7,
+       89.5
+      ],
+      [
+       733.5,
+       345.7,
+       89.5
+      ],
+      [
+       738.5,
+       345.7,
+       89.5
+      ],
+      [
+       743.5,
+       345.8,
+       89.5
+      ],
+      [
+       748.5,
+       345.8,
+       89.5
+      ],
+      [
+       753.5,
+       345.9,
+       89.5
+      ],
+      [
+       758.5,
+       345.9,
+       89.5
+      ],
+      [
+       763.5,
+       346.0,
+       89.5
+      ],
+      [
+       768.5,
+       346.0,
+       89.5
+      ],
+      [
+       773.5,
+       346.0,
+       89.5
+      ],
+      [
+       778.5,
+       346.1,
+       89.5
+      ],
+      [
+       783.5,
+       346.1,
+       89.5
+      ],
+      [
+       788.5,
+       346.2,
+       89.5
+      ],
+      [
+       793.5,
+       346.2,
+       89.5
+      ],
+      [
+       798.5,
+       346.3,
+       89.5
+      ],
+      [
+       803.5,
+       346.3,
+       89.5
+      ],
+      [
+       808.5,
+       346.4,
+       89.5
+      ],
+      [
+       813.5,
+       346.4,
+       89.5
+      ],
+      [
+       818.5,
+       346.4,
+       89.5
+      ],
+      [
+       823.5,
+       346.5,
+       89.5
+      ],
+      [
+       828.5,
+       346.5,
+       89.5
+      ],
+      [
+       833.5,
+       346.6,
+       89.5
+      ],
+      [
+       838.5,
+       346.6,
+       89.5
+      ],
+      [
+       843.5,
+       346.7,
+       89.5
+      ],
+      [
+       848.5,
+       346.7,
+       89.5
+      ],
+      [
+       853.5,
+       346.7,
+       89.5
+      ],
+      [
+       858.5,
+       346.8,
+       89.5
+      ],
+      [
+       863.5,
+       346.8,
+       89.5
+      ],
+      [
+       868.5,
+       346.9,
+       89.5
+      ],
+      [
+       873.5,
+       346.9,
+       89.5
+      ],
+      [
+       878.5,
+       347.0,
+       89.5
+      ],
+      [
+       883.5,
+       347.0,
+       89.5
+      ],
+      [
+       888.5,
+       347.0,
+       89.5
+      ],
+      [
+       893.5,
+       347.1,
+       89.5
+      ],
+      [
+       898.5,
+       347.1,
+       89.5
+      ],
+      [
+       903.5,
+       347.2,
+       89.5
+      ],
+      [
+       908.5,
+       347.2,
+       89.5
+      ],
+      [
+       913.5,
+       347.3,
+       89.5
+      ],
+      [
+       918.5,
+       347.3,
+       89.5
+      ],
+      [
+       923.5,
+       347.4,
+       89.5
+      ],
+      [
+       928.5,
+       347.4,
+       89.5
+      ],
+      [
+       933.5,
+       347.4,
+       89.5
+      ],
+      [
+       938.5,
+       347.5,
+       89.5
+      ],
+      [
+       943.5,
+       347.5,
+       89.5
+      ],
+      [
+       948.5,
+       347.6,
+       89.5
+      ],
+      [
+       953.5,
+       347.6,
+       89.5
+      ],
+      [
+       958.5,
+       347.7,
+       89.5
+      ],
+      [
+       963.5,
+       347.7,
+       89.5
+      ],
+      [
+       968.5,
+       347.7,
+       89.5
+      ],
+      [
+       973.5,
+       347.8,
+       89.5
+      ],
+      [
+       978.5,
+       347.8,
+       89.5
+      ],
+      [
+       983.5,
+       347.9,
+       89.5
+      ],
+      [
+       988.5,
+       347.9,
+       89.5
+      ],
+      [
+       993.5,
+       348.0,
+       89.5
+      ],
+      [
+       998.5,
+       348.0,
+       89.5
+      ],
+      [
+       1003.5,
+       348.1,
+       89.5
+      ],
+      [
+       1008.5,
+       348.1,
+       89.5
+      ],
+      [
+       1013.5,
+       348.1,
+       89.5
+      ],
+      [
+       1018.5,
+       348.2,
+       89.5
+      ],
+      [
+       1023.5,
+       348.2,
+       89.5
+      ],
+      [
+       1028.5,
+       348.3,
+       89.5
+      ],
+      [
+       1033.5,
+       348.3,
+       89.5
+      ],
+      [
+       1038.5,
+       348.4,
+       89.5
+      ],
+      [
+       1043.5,
+       348.4,
+       89.5
+      ],
+      [
+       1048.5,
+       348.4,
+       89.5
+      ],
+      [
+       1053.5,
+       348.5,
+       89.5
+      ],
+      [
+       1058.5,
+       348.5,
+       89.5
+      ],
+      [
+       1063.5,
+       348.6,
+       89.5
+      ],
+      [
+       1068.5,
+       348.6,
+       89.5
+      ],
+      [
+       1073.5,
+       348.7,
+       89.5
+      ],
+      [
+       1078.5,
+       348.7,
+       89.5
+      ],
+      [
+       1083.5,
+       348.8,
+       89.5
+      ],
+      [
+       1088.5,
+       348.8,
+       89.5
+      ],
+      [
+       1093.5,
+       348.8,
+       89.5
+      ],
+      [
+       1098.5,
+       348.9,
+       89.5
+      ],
+      [
+       1098.5,
+       348.9,
+       89.5
+      ]
+     ]
+    },
+    "predicted_end_pose": [
+     1098.5,
+     348.9,
+     89.5
+    ],
+    "predicted_path": [
+     [
+      298.5,
+      341.9
+     ],
+     [
+      298.5,
+      341.9
+     ],
+     [
+      318.5,
+      342.1
+     ],
+     [
+      338.5,
+      342.2
+     ],
+     [
+      358.5,
+      342.4
+     ],
+     [
+      378.5,
+      342.6
+     ],
+     [
+      398.5,
+      342.8
+     ],
+     [
+      418.5,
+      342.9
+     ],
+     [
+      438.5,
+      343.1
+     ],
+     [
+      458.5,
+      343.3
+     ],
+     [
+      478.5,
+      343.5
+     ],
+     [
+      498.5,
+      343.6
+     ],
+     [
+      518.5,
+      343.8
+     ],
+     [
+      538.5,
+      344.0
+     ],
+     [
+      558.5,
+      344.2
+     ],
+     [
+      578.5,
+      344.3
+     ],
+     [
+      598.5,
+      344.5
+     ],
+     [
+      618.5,
+      344.7
+     ],
+     [
+      638.5,
+      344.9
+     ],
+     [
+      658.5,
+      345.0
+     ],
+     [
+      678.5,
+      345.2
+     ],
+     [
+      698.5,
+      345.4
+     ],
+     [
+      718.5,
+      345.6
+     ],
+     [
+      738.5,
+      345.7
+     ],
+     [
+      758.5,
+      345.9
+     ],
+     [
+      778.5,
+      346.1
+     ],
+     [
+      798.5,
+      346.3
+     ],
+     [
+      818.5,
+      346.4
+     ],
+     [
+      838.5,
+      346.6
+     ],
+     [
+      858.5,
+      346.8
+     ],
+     [
+      878.5,
+      347.0
+     ],
+     [
+      898.5,
+      347.1
+     ],
+     [
+      918.5,
+      347.3
+     ],
+     [
+      938.5,
+      347.5
+     ],
+     [
+      958.5,
+      347.7
+     ],
+     [
+      978.5,
+      347.8
+     ],
+     [
+      998.5,
+      348.0
+     ],
+     [
+      1018.5,
+      348.2
+     ],
+     [
+      1038.5,
+      348.4
+     ],
+     [
+      1058.5,
+      348.5
+     ],
+     [
+      1078.5,
+      348.7
+     ],
+     [
+      1098.5,
+      348.9
+     ]
+    ],
+    "e_pos_mm": 31.8,
+    "e_theta_deg": 0.7,
+    "planner_latency_s": 2.35,
+    "drive_time_s": 9.98,
+    "nacks": [],
+    "verifier": {
+     "success": true,
+     "message": "The rover turned approximately 90\u00b0 right, traveled approximately 800 mm forward, and stopped safely.",
+     "latency_s": 2.537,
+     "has_correction": false,
+     "agrees_with_rule": true
+    }
+   }
+  ]
+ }
+}

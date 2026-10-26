@@ -1,0 +1,10 @@
+task,family,n,first_pass,closed_loop,replay,median_goal_error_mm,median_e_pos_mm,median_e_theta_deg,min_clearance_mm,median_path_efficiency
+SUB-FWD-300,subsystem,1,1/1,-,1/1,17,9,0.6,-,0.95
+SUB-FWD-800,subsystem,1,1/1,-,1/1,34,16,0.1,-,0.97
+SUB-SQUARE,subsystem,1,1/1,-,1/1,14,7,1.5,-,0.01
+SUB-TURN-180,subsystem,1,1/1,-,1/1,9,4,0.6,-,-
+SUB-TURN-L25,subsystem,1,1/1,-,1/1,9,1,0.2,-,-
+SUB-TURN-L90,subsystem,1,1/1,-,1/1,5,1,0.8,-,-
+SUB-TURN-R20,subsystem,1,1/1,-,1/1,18,2,0.9,-,-
+SUB-TURN-R90,subsystem,1,1/1,-,1/1,5,7,2.8,-,-
+Total,,8,"8/8 (100%, 68-100%)",-,"8/8 (100%, 68-100%)",12,5,0.7,-,0.95

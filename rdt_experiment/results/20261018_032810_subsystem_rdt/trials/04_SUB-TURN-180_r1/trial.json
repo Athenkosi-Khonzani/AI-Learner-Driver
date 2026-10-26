@@ -1,0 +1,2332 @@
+{
+ "meta": {
+  "rdt_version": "1.0.0",
+  "session": "rdt",
+  "session_mode": "subsystem",
+  "slot": 4,
+  "task_id": "SUB-TURN-180",
+  "task_family": "subsystem",
+  "task_difficulty": 1,
+  "task_sha256": "928d8d52c9e9c3abcb598b84d36e179f87acaca529bb351752522b1b3bd72143",
+  "rep": 1,
+  "tape_check": false,
+  "instruction": "[fixed plan, no LLM] Turn 180 deg",
+  "fixed_plan": true,
+  "verification_enabled": false,
+  "max_correction_rounds": 0,
+  "started_at": "2026-10-18T01:47:44.542+00:00",
+  "battery_v": 3.8,
+  "battery_source": "telemetry",
+  "override_reason": null,
+  "experiment_config_sha256": "6de282d7c97da8500f1f951af88625b52fd63524825fde516642dcbc98052146",
+  "host_fingerprint_sha256": "4c8605dc3f826b3dfc31664a0a41a0db652c079071f2172a41ef14fb8a1b4039",
+  "planner_system_prompt_sha256": "2b0993045ab7b4ec5044dcb61e630b10a673d35de65334257bd4003bfbbc1bf5",
+  "planner": "openai/gpt-6-sol",
+  "settings_path": "C:\\Users\\khonz\\OneDrive - University of Cape Town\\Final Year\\EEE4022S\\Might be final 2\\ai_learner_host\\data\\settings.json",
+  "host_overrides_changed": {
+   "planner_provider": [
+    "gemini",
+    "openai"
+   ],
+   "planner_model": [
+    "gemini-3.1-pro-preview",
+    "gpt-6-sol"
+   ],
+   "heading_reply_settle_seconds": [
+    5.0,
+    10.0
+   ],
+   "parallax_camera_height_mm": [
+    0.0,
+    1513.0
+   ],
+   "parallax_marker_height_mm": [
+    0.0,
+    55.0
+   ],
+   "parallax_nadir_x_mm": [
+    0.0,
+    858.4
+   ],
+   "parallax_nadir_y_mm": [
+    0.0,
+    -970.2
+   ]
+  },
+  "rover_uri": "ws://192.168.137.38:81",
+  "camera_url": "http://196.47.194.71:8080/video",
+  "arena_mm": [
+   1710.0,
+   1254.0
+  ]
+ },
+ "status": "complete",
+ "placement": {
+  "ok": true,
+  "items": [
+   {
+    "name": "rover",
+    "ok": true,
+    "text": "\u0394 9 mm, 0.2\u00b0, conf 0.80",
+    "position_error_mm": 9.296235797353647,
+    "angle_error_deg": 0.19999999999998863
+   }
+  ]
+ },
+ "run_id": "563396417e93",
+ "finish": {
+  "t": 15.744,
+  "status": "DONE",
+  "state": "COMPLETED",
+  "correction_rounds": 0,
+  "message": ""
+ },
+ "rounds": [
+  {
+   "index": 0,
+   "source": "planner",
+   "revision": 0,
+   "path_id": 4,
+   "commands": [
+    [
+     "TURN",
+     180
+    ],
+    [
+     "STOP"
+    ]
+   ],
+   "t_plan_saved": 0.195,
+   "start_world_key": "W0",
+   "end_world_key": "after_0",
+   "t_path_sent": 0.217,
+   "t_path_ack": 3.018,
+   "command_acks": [
+    {
+     "i": 0,
+     "t": 3.004
+    },
+    {
+     "i": 1,
+     "t": 3.018
+    }
+   ],
+   "nacks": [],
+   "verifier": {
+    "success": true,
+    "message": "The rover turned approximately 180\u00b0 and remains safely within the arena.",
+    "latency_s": 2.319,
+    "has_correction": false,
+    "correction": null
+   },
+   "planner_latency_s": 0.0,
+   "t_end_capture": 13.369
+  }
+ ],
+ "worlds": {
+  "W0": {
+   "t": 0.0,
+   "role": "start",
+   "snapshot_id": "111b42f85dcc4fcd8cb6dd187e8f5c25",
+   "timestamp": "2026-10-18T01:47:38.253+00:00",
+   "scene": {
+    "schema": "ai_learner_world_state",
+    "schema_version": "1.0",
+    "coordinate_frame": {
+     "units": "mm",
+     "origin": "arena_bottom_left",
+     "x_axis": "right",
+     "y_axis": "up",
+     "heading": {
+      "0_deg": "+Y/up",
+      "90_deg": "+X/right",
+      "180_deg": "-Y/down",
+      "270_deg": "-X/left"
+     }
+    },
+    "arena": {
+     "width_mm": 1710.0,
+     "height_mm": 1254.0
+    },
+    "rover": {
+     "available": true,
+     "pose_valid": true,
+     "confidence": 0.795,
+     "footprint_mm": {
+      "length": 155.5,
+      "width": 121.3
+     },
+     "pose": {
+      "x_mm": 850.1,
+      "y_mm": 619.1,
+      "heading_deg": 0.2
+     },
+     "stale": false,
+     "age_s": 0.0
+    },
+    "obstacles": [],
+    "perception": {
+     "block_count": 0,
+     "rover_marker_id": 29,
+     "rover_marker_dictionary": "DICT_4X4_50"
+    }
+   },
+   "host_snapshot_id": "111b42f85dcc4fcd8cb6dd187e8f5c25"
+  },
+  "after_0": {
+   "t": 13.355,
+   "role": "after",
+   "snapshot_id": "999d8bfbe7a845dbba3a907b5d5ca444",
+   "timestamp": "2026-10-18T01:47:57.757+00:00",
+   "scene": {
+    "schema": "ai_learner_world_state",
+    "schema_version": "1.0",
+    "coordinate_frame": {
+     "units": "mm",
+     "origin": "arena_bottom_left",
+     "x_axis": "right",
+     "y_axis": "up",
+     "heading": {
+      "0_deg": "+Y/up",
+      "90_deg": "+X/right",
+      "180_deg": "-Y/down",
+      "270_deg": "-X/left"
+     }
+    },
+    "arena": {
+     "width_mm": 1710.0,
+     "height_mm": 1254.0
+    },
+    "rover": {
+     "available": true,
+     "pose_valid": true,
+     "confidence": 0.785,
+     "footprint_mm": {
+      "length": 155.5,
+      "width": 121.3
+     },
+     "pose": {
+      "x_mm": 858.3,
+      "y_mm": 617.4,
+      "heading_deg": 181.0
+     },
+     "stale": false,
+     "age_s": 0.0
+    },
+    "obstacles": [],
+    "perception": {
+     "block_count": 0,
+     "rover_marker_id": 29,
+     "rover_marker_dictionary": "DICT_4X4_50"
+    }
+   }
+  }
+ },
+ "planner_calls": [
+  {
+   "t_request": 0.195,
+   "prompt": "[fixed plan, no LLM] Turn 180 deg",
+   "t_response": 0.195,
+   "latency_s": 0.0,
+   "raw_response": "[fixed plan, no LLM]",
+   "commands": [
+    [
+     "TURN",
+     180
+    ],
+    [
+     "STOP"
+    ]
+   ],
+   "fixed_plan": true
+  }
+ ],
+ "verifier_calls": [
+  {
+   "t_request": 13.398,
+   "path_id": 4,
+   "t_response": 15.717,
+   "latency_s": 2.319,
+   "success": true,
+   "message": "The rover turned approximately 180\u00b0 and remains safely within the arena.",
+   "correction": null
+  }
+ ],
+ "events": [
+  {
+   "t": 3.018,
+   "kind": "path_ack",
+   "round": 0,
+   "path_id": 4
+  }
+ ],
+ "telemetry_vbat": [
+  [
+   0.841,
+   3.76
+  ],
+  [
+   1.88,
+   3.78
+  ],
+  [
+   3.041,
+   3.8
+  ],
+  [
+   3.994,
+   3.8
+  ],
+  [
+   4.978,
+   3.79
+  ],
+  [
+   5.968,
+   3.8
+  ],
+  [
+   6.974,
+   3.79
+  ],
+  [
+   7.97,
+   3.8
+  ],
+  [
+   8.971,
+   3.82
+  ],
+  [
+   9.974,
+   3.83
+  ],
+  [
+   10.979,
+   3.79
+  ],
+  [
+   11.972,
+   3.82
+  ],
+  [
+   13.095,
+   3.82
+  ],
+  [
+   14.087,
+   3.82
+  ],
+  [
+   15.058,
+   3.82
+  ],
+  [
+   16.034,
+   3.82
+  ]
+ ],
+ "timing": {
+  "planner_latency_s": 0.0,
+  "mission_time_s": 15.604709999999017
+ },
+ "trail": [
+  {
+   "t": 0.205,
+   "round": 0,
+   "x_mm": 850.6,
+   "y_mm": 618.9,
+   "heading_deg": 0.4,
+   "confidence": 0.795,
+   "detected": true
+  },
+  {
+   "t": 0.33,
+   "round": 0,
+   "x_mm": 850.5,
+   "y_mm": 619.1,
+   "heading_deg": 0.3,
+   "confidence": 0.795,
+   "detected": true
+  },
+  {
+   "t": 0.58,
+   "round": 0,
+   "x_mm": 850.4,
+   "y_mm": 619.3,
+   "heading_deg": 0.2,
+   "confidence": 0.795,
+   "detected": true
+  },
+  {
+   "t": 0.832,
+   "round": 0,
+   "x_mm": 850.4,
+   "y_mm": 619.3,
+   "heading_deg": 0.2,
+   "confidence": 0.796,
+   "detected": true
+  },
+  {
+   "t": 1.093,
+   "round": 0,
+   "x_mm": 850.4,
+   "y_mm": 619.2,
+   "heading_deg": 0.2,
+   "confidence": 0.795,
+   "detected": true
+  },
+  {
+   "t": 1.216,
+   "round": 0,
+   "x_mm": 850.6,
+   "y_mm": 619.1,
+   "heading_deg": 0.5,
+   "confidence": 0.795,
+   "detected": true
+  },
+  {
+   "t": 1.346,
+   "round": 0,
+   "x_mm": 850.5,
+   "y_mm": 619.1,
+   "heading_deg": 0.3,
+   "confidence": 0.795,
+   "detected": true
+  },
+  {
+   "t": 1.478,
+   "round": 0,
+   "x_mm": 850.4,
+   "y_mm": 619.0,
+   "heading_deg": 0.3,
+   "confidence": 0.795,
+   "detected": true
+  },
+  {
+   "t": 1.61,
+   "round": 0,
+   "x_mm": 850.2,
+   "y_mm": 619.2,
+   "heading_deg": 0.1,
+   "confidence": 0.795,
+   "detected": true
+  },
+  {
+   "t": 1.731,
+   "round": 0,
+   "x_mm": 850.2,
+   "y_mm": 619.0,
+   "heading_deg": 0.3,
+   "confidence": 0.795,
+   "detected": true
+  },
+  {
+   "t": 1.866,
+   "round": 0,
+   "x_mm": 850.5,
+   "y_mm": 618.9,
+   "heading_deg": 0.4,
+   "confidence": 0.795,
+   "detected": true
+  },
+  {
+   "t": 2.001,
+   "round": 0,
+   "x_mm": 850.5,
+   "y_mm": 619.0,
+   "heading_deg": 0.3,
+   "confidence": 0.796,
+   "detected": true
+  },
+  {
+   "t": 2.122,
+   "round": 0,
+   "x_mm": 850.4,
+   "y_mm": 619.0,
+   "heading_deg": 0.4,
+   "confidence": 0.795,
+   "detected": true
+  },
+  {
+   "t": 2.257,
+   "round": 0,
+   "x_mm": 850.4,
+   "y_mm": 619.0,
+   "heading_deg": 0.4,
+   "confidence": 0.796,
+   "detected": true
+  },
+  {
+   "t": 2.394,
+   "round": 0,
+   "x_mm": 850.6,
+   "y_mm": 619.1,
+   "heading_deg": 0.4,
+   "confidence": 0.795,
+   "detected": true
+  },
+  {
+   "t": 2.512,
+   "round": 0,
+   "x_mm": 850.5,
+   "y_mm": 619.2,
+   "heading_deg": 0.3,
+   "confidence": 0.796,
+   "detected": true
+  },
+  {
+   "t": 2.765,
+   "round": 0,
+   "x_mm": 850.8,
+   "y_mm": 619.3,
+   "heading_deg": 0.4,
+   "confidence": 0.796,
+   "detected": true
+  },
+  {
+   "t": 2.893,
+   "round": 0,
+   "x_mm": 850.5,
+   "y_mm": 619.1,
+   "heading_deg": 0.3,
+   "confidence": 0.796,
+   "detected": true
+  },
+  {
+   "t": 3.025,
+   "round": 0,
+   "x_mm": 850.3,
+   "y_mm": 619.0,
+   "heading_deg": 0.3,
+   "confidence": 0.797,
+   "detected": true
+  },
+  {
+   "t": 3.277,
+   "round": 0,
+   "x_mm": 850.6,
+   "y_mm": 619.1,
+   "heading_deg": 0.4,
+   "confidence": 0.797,
+   "detected": true
+  },
+  {
+   "t": 3.539,
+   "round": 0,
+   "x_mm": 850.8,
+   "y_mm": 619.7,
+   "heading_deg": 1.0,
+   "confidence": 0.797,
+   "detected": true
+  },
+  {
+   "t": 3.8,
+   "round": 0,
+   "x_mm": 851.4,
+   "y_mm": 619.5,
+   "heading_deg": 6.9,
+   "confidence": 0.791,
+   "detected": true
+  },
+  {
+   "t": 4.044,
+   "round": 0,
+   "x_mm": 852.5,
+   "y_mm": 619.9,
+   "heading_deg": 15.5,
+   "confidence": 0.79,
+   "detected": true
+  },
+  {
+   "t": 4.303,
+   "round": 0,
+   "x_mm": 852.8,
+   "y_mm": 619.5,
+   "heading_deg": 23.8,
+   "confidence": 0.791,
+   "detected": true
+  },
+  {
+   "t": 4.437,
+   "round": 0,
+   "x_mm": 853.0,
+   "y_mm": 619.8,
+   "heading_deg": 26.8,
+   "confidence": 0.791,
+   "detected": true
+  },
+  {
+   "t": 4.566,
+   "round": 0,
+   "x_mm": 853.0,
+   "y_mm": 620.5,
+   "heading_deg": 32.7,
+   "confidence": 0.79,
+   "detected": true
+  },
+  {
+   "t": 4.689,
+   "round": 0,
+   "x_mm": 853.5,
+   "y_mm": 621.0,
+   "heading_deg": 36.4,
+   "confidence": 0.791,
+   "detected": true
+  },
+  {
+   "t": 4.815,
+   "round": 0,
+   "x_mm": 853.5,
+   "y_mm": 621.0,
+   "heading_deg": 36.4,
+   "confidence": 0.358,
+   "detected": false
+  },
+  {
+   "t": 4.943,
+   "round": 0,
+   "x_mm": 853.5,
+   "y_mm": 621.0,
+   "heading_deg": 36.4,
+   "confidence": 0.161,
+   "detected": false
+  },
+  {
+   "t": 5.06,
+   "round": 0,
+   "x_mm": 853.5,
+   "y_mm": 621.0,
+   "heading_deg": 36.4,
+   "confidence": 0.074,
+   "detected": false
+  },
+  {
+   "t": 5.185,
+   "round": 0,
+   "x_mm": 853.5,
+   "y_mm": 621.0,
+   "heading_deg": 36.4,
+   "confidence": 0.033,
+   "detected": false
+  },
+  {
+   "t": 5.314,
+   "round": 0,
+   "x_mm": 853.5,
+   "y_mm": 621.0,
+   "heading_deg": 36.4,
+   "confidence": 0.0,
+   "detected": false
+  },
+  {
+   "t": 5.445,
+   "round": 0,
+   "x_mm": 853.5,
+   "y_mm": 621.0,
+   "heading_deg": 36.4,
+   "confidence": 0.0,
+   "detected": false
+  },
+  {
+   "t": 5.568,
+   "round": 0,
+   "x_mm": 853.5,
+   "y_mm": 621.0,
+   "heading_deg": 36.4,
+   "confidence": 0.0,
+   "detected": false
+  },
+  {
+   "t": 5.688,
+   "round": 0,
+   "x_mm": 853.5,
+   "y_mm": 621.0,
+   "heading_deg": 36.4,
+   "confidence": 0.0,
+   "detected": false
+  },
+  {
+   "t": 5.805,
+   "round": 0,
+   "x_mm": 853.5,
+   "y_mm": 621.0,
+   "heading_deg": 36.4,
+   "confidence": 0.0,
+   "detected": false
+  },
+  {
+   "t": 5.934,
+   "round": 0,
+   "x_mm": 853.5,
+   "y_mm": 621.0,
+   "heading_deg": 36.4,
+   "confidence": 0.0,
+   "detected": false
+  },
+  {
+   "t": 6.071,
+   "round": 0,
+   "x_mm": 853.5,
+   "y_mm": 621.0,
+   "heading_deg": 36.4,
+   "confidence": 0.0,
+   "detected": false
+  },
+  {
+   "t": 6.195,
+   "round": 0,
+   "x_mm": 853.5,
+   "y_mm": 621.0,
+   "heading_deg": 36.4,
+   "confidence": 0.0,
+   "detected": false
+  },
+  {
+   "t": 6.336,
+   "round": 0,
+   "x_mm": 853.5,
+   "y_mm": 621.0,
+   "heading_deg": 36.4,
+   "confidence": 0.0,
+   "detected": false
+  },
+  {
+   "t": 6.452,
+   "round": 0,
+   "x_mm": 853.5,
+   "y_mm": 621.0,
+   "heading_deg": 36.4,
+   "confidence": 0.0,
+   "detected": false
+  },
+  {
+   "t": 6.738,
+   "round": 0,
+   "x_mm": 858.0,
+   "y_mm": 617.7,
+   "heading_deg": 176.6,
+   "confidence": 0.329,
+   "detected": true
+  },
+  {
+   "t": 7.006,
+   "round": 0,
+   "x_mm": 858.4,
+   "y_mm": 617.7,
+   "heading_deg": 180.7,
+   "confidence": 0.33,
+   "detected": true
+  },
+  {
+   "t": 7.146,
+   "round": 0,
+   "x_mm": 858.9,
+   "y_mm": 617.8,
+   "heading_deg": 180.6,
+   "confidence": 0.328,
+   "detected": true
+  },
+  {
+   "t": 7.283,
+   "round": 0,
+   "x_mm": 858.6,
+   "y_mm": 617.8,
+   "heading_deg": 180.8,
+   "confidence": 0.33,
+   "detected": true
+  },
+  {
+   "t": 7.42,
+   "round": 0,
+   "x_mm": 858.5,
+   "y_mm": 617.6,
+   "heading_deg": 180.8,
+   "confidence": 0.329,
+   "detected": true
+  },
+  {
+   "t": 7.555,
+   "round": 0,
+   "x_mm": 858.8,
+   "y_mm": 617.4,
+   "heading_deg": 180.7,
+   "confidence": 0.33,
+   "detected": true
+  },
+  {
+   "t": 7.676,
+   "round": 0,
+   "x_mm": 858.7,
+   "y_mm": 617.3,
+   "heading_deg": 180.9,
+   "confidence": 0.363,
+   "detected": true
+  },
+  {
+   "t": 7.815,
+   "round": 0,
+   "x_mm": 858.7,
+   "y_mm": 617.4,
+   "heading_deg": 180.9,
+   "confidence": 0.394,
+   "detected": true
+  },
+  {
+   "t": 7.936,
+   "round": 0,
+   "x_mm": 858.6,
+   "y_mm": 617.4,
+   "heading_deg": 180.9,
+   "confidence": 0.427,
+   "detected": true
+  },
+  {
+   "t": 8.211,
+   "round": 0,
+   "x_mm": 858.5,
+   "y_mm": 617.5,
+   "heading_deg": 180.8,
+   "confidence": 0.46,
+   "detected": true
+  },
+  {
+   "t": 8.47,
+   "round": 0,
+   "x_mm": 858.2,
+   "y_mm": 617.7,
+   "heading_deg": 180.9,
+   "confidence": 0.492,
+   "detected": true
+  },
+  {
+   "t": 8.709,
+   "round": 0,
+   "x_mm": 858.7,
+   "y_mm": 617.7,
+   "heading_deg": 180.8,
+   "confidence": 0.524,
+   "detected": true
+  },
+  {
+   "t": 8.839,
+   "round": 0,
+   "x_mm": 858.7,
+   "y_mm": 617.6,
+   "heading_deg": 180.8,
+   "confidence": 0.557,
+   "detected": true
+  },
+  {
+   "t": 8.975,
+   "round": 0,
+   "x_mm": 858.9,
+   "y_mm": 617.5,
+   "heading_deg": 180.8,
+   "confidence": 0.59,
+   "detected": true
+  },
+  {
+   "t": 9.113,
+   "round": 0,
+   "x_mm": 858.7,
+   "y_mm": 617.5,
+   "heading_deg": 180.7,
+   "confidence": 0.621,
+   "detected": true
+  },
+  {
+   "t": 9.233,
+   "round": 0,
+   "x_mm": 858.9,
+   "y_mm": 617.5,
+   "heading_deg": 180.8,
+   "confidence": 0.654,
+   "detected": true
+  },
+  {
+   "t": 9.38,
+   "round": 0,
+   "x_mm": 858.8,
+   "y_mm": 617.3,
+   "heading_deg": 180.9,
+   "confidence": 0.687,
+   "detected": true
+  },
+  {
+   "t": 9.502,
+   "round": 0,
+   "x_mm": 858.6,
+   "y_mm": 617.4,
+   "heading_deg": 180.9,
+   "confidence": 0.72,
+   "detected": true
+  },
+  {
+   "t": 9.627,
+   "round": 0,
+   "x_mm": 858.3,
+   "y_mm": 617.4,
+   "heading_deg": 181.1,
+   "confidence": 0.751,
+   "detected": true
+  },
+  {
+   "t": 9.775,
+   "round": 0,
+   "x_mm": 858.4,
+   "y_mm": 617.5,
+   "heading_deg": 180.9,
+   "confidence": 0.784,
+   "detected": true
+  },
+  {
+   "t": 9.91,
+   "round": 0,
+   "x_mm": 858.5,
+   "y_mm": 617.5,
+   "heading_deg": 180.9,
+   "confidence": 0.784,
+   "detected": true
+  },
+  {
+   "t": 10.058,
+   "round": 0,
+   "x_mm": 858.5,
+   "y_mm": 617.6,
+   "heading_deg": 181.0,
+   "confidence": 0.784,
+   "detected": true
+  },
+  {
+   "t": 10.185,
+   "round": 0,
+   "x_mm": 859.0,
+   "y_mm": 617.5,
+   "heading_deg": 180.7,
+   "confidence": 0.785,
+   "detected": true
+  },
+  {
+   "t": 10.468,
+   "round": 0,
+   "x_mm": 859.1,
+   "y_mm": 617.8,
+   "heading_deg": 180.7,
+   "confidence": 0.784,
+   "detected": true
+  },
+  {
+   "t": 10.61,
+   "round": 0,
+   "x_mm": 858.7,
+   "y_mm": 617.7,
+   "heading_deg": 180.9,
+   "confidence": 0.785,
+   "detected": true
+  },
+  {
+   "t": 10.734,
+   "round": 0,
+   "x_mm": 858.6,
+   "y_mm": 617.6,
+   "heading_deg": 180.9,
+   "confidence": 0.785,
+   "detected": true
+  },
+  {
+   "t": 10.876,
+   "round": 0,
+   "x_mm": 858.7,
+   "y_mm": 617.6,
+   "heading_deg": 180.8,
+   "confidence": 0.785,
+   "detected": true
+  },
+  {
+   "t": 11.0,
+   "round": 0,
+   "x_mm": 858.5,
+   "y_mm": 617.4,
+   "heading_deg": 180.9,
+   "confidence": 0.784,
+   "detected": true
+  },
+  {
+   "t": 11.119,
+   "round": 0,
+   "x_mm": 858.7,
+   "y_mm": 617.5,
+   "heading_deg": 180.8,
+   "confidence": 0.784,
+   "detected": true
+  },
+  {
+   "t": 11.251,
+   "round": 0,
+   "x_mm": 858.7,
+   "y_mm": 617.5,
+   "heading_deg": 180.8,
+   "confidence": 0.785,
+   "detected": true
+  },
+  {
+   "t": 11.374,
+   "round": 0,
+   "x_mm": 858.8,
+   "y_mm": 617.5,
+   "heading_deg": 180.8,
+   "confidence": 0.784,
+   "detected": true
+  },
+  {
+   "t": 11.499,
+   "round": 0,
+   "x_mm": 858.9,
+   "y_mm": 617.5,
+   "heading_deg": 180.7,
+   "confidence": 0.784,
+   "detected": true
+  },
+  {
+   "t": 11.622,
+   "round": 0,
+   "x_mm": 858.8,
+   "y_mm": 617.5,
+   "heading_deg": 180.7,
+   "confidence": 0.785,
+   "detected": true
+  },
+  {
+   "t": 11.741,
+   "round": 0,
+   "x_mm": 858.7,
+   "y_mm": 617.6,
+   "heading_deg": 180.7,
+   "confidence": 0.785,
+   "detected": true
+  },
+  {
+   "t": 11.866,
+   "round": 0,
+   "x_mm": 858.7,
+   "y_mm": 617.5,
+   "heading_deg": 180.8,
+   "confidence": 0.785,
+   "detected": true
+  },
+  {
+   "t": 11.997,
+   "round": 0,
+   "x_mm": 858.6,
+   "y_mm": 617.4,
+   "heading_deg": 180.9,
+   "confidence": 0.784,
+   "detected": true
+  },
+  {
+   "t": 12.123,
+   "round": 0,
+   "x_mm": 858.7,
+   "y_mm": 617.3,
+   "heading_deg": 180.8,
+   "confidence": 0.785,
+   "detected": true
+  },
+  {
+   "t": 12.397,
+   "round": 0,
+   "x_mm": 858.8,
+   "y_mm": 617.4,
+   "heading_deg": 180.9,
+   "confidence": 0.785,
+   "detected": true
+  },
+  {
+   "t": 12.659,
+   "round": 0,
+   "x_mm": 858.7,
+   "y_mm": 617.5,
+   "heading_deg": 180.8,
+   "confidence": 0.784,
+   "detected": true
+  },
+  {
+   "t": 12.793,
+   "round": 0,
+   "x_mm": 858.7,
+   "y_mm": 617.6,
+   "heading_deg": 180.7,
+   "confidence": 0.784,
+   "detected": true
+  },
+  {
+   "t": 12.926,
+   "round": 0,
+   "x_mm": 858.6,
+   "y_mm": 617.6,
+   "heading_deg": 180.8,
+   "confidence": 0.785,
+   "detected": true
+  },
+  {
+   "t": 13.074,
+   "round": 0,
+   "x_mm": 858.5,
+   "y_mm": 617.5,
+   "heading_deg": 180.8,
+   "confidence": 0.786,
+   "detected": true
+  },
+  {
+   "t": 13.212,
+   "round": 0,
+   "x_mm": 858.6,
+   "y_mm": 617.5,
+   "heading_deg": 180.8,
+   "confidence": 0.786,
+   "detected": true
+  },
+  {
+   "t": 13.341,
+   "round": 0,
+   "x_mm": 858.5,
+   "y_mm": 617.6,
+   "heading_deg": 180.9,
+   "confidence": 0.785,
+   "detected": true
+  },
+  {
+   "t": 13.455,
+   "round": 0,
+   "x_mm": 858.3,
+   "y_mm": 617.4,
+   "heading_deg": 181.0,
+   "confidence": 0.785,
+   "detected": true
+  },
+  {
+   "t": 13.588,
+   "round": 0,
+   "x_mm": 858.4,
+   "y_mm": 617.6,
+   "heading_deg": 180.9,
+   "confidence": 0.784,
+   "detected": true
+  },
+  {
+   "t": 13.734,
+   "round": 0,
+   "x_mm": 858.4,
+   "y_mm": 617.6,
+   "heading_deg": 180.9,
+   "confidence": 0.784,
+   "detected": true
+  },
+  {
+   "t": 13.873,
+   "round": 0,
+   "x_mm": 858.5,
+   "y_mm": 617.5,
+   "heading_deg": 180.9,
+   "confidence": 0.784,
+   "detected": true
+  },
+  {
+   "t": 14.138,
+   "round": 0,
+   "x_mm": 858.2,
+   "y_mm": 617.4,
+   "heading_deg": 181.0,
+   "confidence": 0.784,
+   "detected": true
+  },
+  {
+   "t": 14.266,
+   "round": 0,
+   "x_mm": 858.4,
+   "y_mm": 617.5,
+   "heading_deg": 180.9,
+   "confidence": 0.784,
+   "detected": true
+  },
+  {
+   "t": 14.394,
+   "round": 0,
+   "x_mm": 858.4,
+   "y_mm": 617.5,
+   "heading_deg": 180.9,
+   "confidence": 0.784,
+   "detected": true
+  },
+  {
+   "t": 14.646,
+   "round": 0,
+   "x_mm": 858.4,
+   "y_mm": 617.4,
+   "heading_deg": 180.9,
+   "confidence": 0.784,
+   "detected": true
+  },
+  {
+   "t": 14.783,
+   "round": 0,
+   "x_mm": 858.6,
+   "y_mm": 617.5,
+   "heading_deg": 180.8,
+   "confidence": 0.784,
+   "detected": true
+  },
+  {
+   "t": 14.907,
+   "round": 0,
+   "x_mm": 858.9,
+   "y_mm": 617.7,
+   "heading_deg": 180.7,
+   "confidence": 0.784,
+   "detected": true
+  },
+  {
+   "t": 15.037,
+   "round": 0,
+   "x_mm": 858.6,
+   "y_mm": 617.4,
+   "heading_deg": 180.9,
+   "confidence": 0.784,
+   "detected": true
+  },
+  {
+   "t": 15.151,
+   "round": 0,
+   "x_mm": 858.8,
+   "y_mm": 617.6,
+   "heading_deg": 180.7,
+   "confidence": 0.785,
+   "detected": true
+  },
+  {
+   "t": 15.292,
+   "round": 0,
+   "x_mm": 858.7,
+   "y_mm": 617.6,
+   "heading_deg": 180.8,
+   "confidence": 0.785,
+   "detected": true
+  },
+  {
+   "t": 15.407,
+   "round": 0,
+   "x_mm": 858.8,
+   "y_mm": 617.6,
+   "heading_deg": 180.7,
+   "confidence": 0.785,
+   "detected": true
+  },
+  {
+   "t": 15.537,
+   "round": 0,
+   "x_mm": 858.7,
+   "y_mm": 617.4,
+   "heading_deg": 180.8,
+   "confidence": 0.785,
+   "detected": true
+  },
+  {
+   "t": 15.667,
+   "round": 0,
+   "x_mm": 858.9,
+   "y_mm": 617.5,
+   "heading_deg": 180.7,
+   "confidence": 0.785,
+   "detected": true
+  },
+  {
+   "t": 15.794,
+   "round": 0,
+   "x_mm": 858.7,
+   "y_mm": 617.5,
+   "heading_deg": 180.8,
+   "confidence": 0.785,
+   "detected": true
+  },
+  {
+   "t": 16.047,
+   "round": 0,
+   "x_mm": 858.6,
+   "y_mm": 617.5,
+   "heading_deg": 180.9,
+   "confidence": 0.785,
+   "detected": true
+  },
+  {
+   "t": 16.173,
+   "round": 0,
+   "x_mm": 858.7,
+   "y_mm": 617.5,
+   "heading_deg": 180.8,
+   "confidence": 0.785,
+   "detected": true
+  },
+  {
+   "t": 16.303,
+   "round": 0,
+   "x_mm": 858.6,
+   "y_mm": 617.5,
+   "heading_deg": 180.9,
+   "confidence": 0.785,
+   "detected": true
+  }
+ ],
+ "recorder_errors": [],
+ "annotations": {},
+ "scores": {
+  "goal": {
+   "x_mm": 855.0,
+   "y_mm": 627.0,
+   "position_tolerance_mm": 50.0,
+   "require_heading": true,
+   "heading_deg": 180.0,
+   "heading_tolerance_deg": 10.0
+  },
+  "first_pass_success": true,
+  "closed_loop_success": null,
+  "corrections_used": 0,
+  "replay_success": true,
+  "first_pass_goal_error_mm": 10.151354589413184,
+  "first_pass_heading_error_deg": 1.0,
+  "final_goal_error_mm": 10.151354589413184,
+  "e_pos_mm": 8.4,
+  "e_theta_deg": 0.8,
+  "collision_any_round": false,
+  "boundary_violation_any_round": false,
+  "min_block_clearance_mm": null,
+  "min_block_clearance_first_pass_mm": null,
+  "replay_min_block_clearance_mm": null,
+  "reference_path_mm": 9.3,
+  "reference_path": [
+   [
+    850.1,
+    619.1
+   ],
+   [
+    855.0,
+    627.0
+   ]
+  ],
+  "driven_path_first_pass_mm": 0.0,
+  "driven_path_total_mm": 0.0,
+  "path_efficiency_first_pass": null,
+  "plan_commands_first_pass": 2,
+  "plan_rotation_first_pass_deg": 180.0,
+  "planning_latency_s": 0.0,
+  "drive_time_first_pass_s": 2.8,
+  "mission_time_s": 15.6,
+  "verifier_agreement": [
+   true
+  ],
+  "camera_tape": null,
+  "attribution": {
+   "first_pass": null,
+   "closed_loop": null,
+   "detail": "",
+   "confirmed_by_tape": null,
+   "verifier_disagreed_rounds": []
+  },
+  "rounds": [
+   {
+    "index": 0,
+    "source": "planner",
+    "commands": [
+     [
+      "TURN",
+      180
+     ],
+     [
+      "STOP"
+     ]
+    ],
+    "n_commands": 2,
+    "score": {
+     "success": true,
+     "final_x_mm": 858.3,
+     "final_y_mm": 617.4,
+     "final_heading_deg": 181.0,
+     "goal_position_error_mm": 10.151354589413184,
+     "goal_heading_error_deg": 1.0,
+     "position_ok": true,
+     "heading_ok": true,
+     "stop_reached": true,
+     "collision": false,
+     "collision_evidence": [],
+     "boundary_violation": false,
+     "pose_available": true
+    },
+    "trail": {
+     "samples": 105,
+     "valid_samples": 80,
+     "marker_lost_fraction": 0.23809523809523814,
+     "path_length_mm": 0.0,
+     "rotation_deg": 180.39999999999998,
+     "min_block_clearance_mm": null,
+     "min_boundary_clearance_mm": 522.3069612667827,
+     "trail_overlaps_block": false,
+     "trail_leaves_arena": false
+    },
+    "block_displacement_mm": {},
+    "replay": {
+     "success": true,
+     "final_pose": [
+      850.1,
+      619.1,
+      180.2
+     ],
+     "position_error_mm": 9.3,
+     "failure_reason": null,
+     "min_block_clearance_mm": null,
+     "min_boundary_clearance_mm": 520.5,
+     "travel_mm": 0.0,
+     "rotation_deg": 180.0,
+     "path": [
+      [
+       850.1,
+       619.1,
+       0.2
+      ],
+      [
+       850.1,
+       619.1,
+       1.2
+      ],
+      [
+       850.1,
+       619.1,
+       2.2
+      ],
+      [
+       850.1,
+       619.1,
+       3.2
+      ],
+      [
+       850.1,
+       619.1,
+       4.2
+      ],
+      [
+       850.1,
+       619.1,
+       5.2
+      ],
+      [
+       850.1,
+       619.1,
+       6.2
+      ],
+      [
+       850.1,
+       619.1,
+       7.2
+      ],
+      [
+       850.1,
+       619.1,
+       8.2
+      ],
+      [
+       850.1,
+       619.1,
+       9.2
+      ],
+      [
+       850.1,
+       619.1,
+       10.2
+      ],
+      [
+       850.1,
+       619.1,
+       11.2
+      ],
+      [
+       850.1,
+       619.1,
+       12.2
+      ],
+      [
+       850.1,
+       619.1,
+       13.2
+      ],
+      [
+       850.1,
+       619.1,
+       14.2
+      ],
+      [
+       850.1,
+       619.1,
+       15.2
+      ],
+      [
+       850.1,
+       619.1,
+       16.2
+      ],
+      [
+       850.1,
+       619.1,
+       17.2
+      ],
+      [
+       850.1,
+       619.1,
+       18.2
+      ],
+      [
+       850.1,
+       619.1,
+       19.2
+      ],
+      [
+       850.1,
+       619.1,
+       20.2
+      ],
+      [
+       850.1,
+       619.1,
+       21.2
+      ],
+      [
+       850.1,
+       619.1,
+       22.2
+      ],
+      [
+       850.1,
+       619.1,
+       23.2
+      ],
+      [
+       850.1,
+       619.1,
+       24.2
+      ],
+      [
+       850.1,
+       619.1,
+       25.2
+      ],
+      [
+       850.1,
+       619.1,
+       26.2
+      ],
+      [
+       850.1,
+       619.1,
+       27.2
+      ],
+      [
+       850.1,
+       619.1,
+       28.2
+      ],
+      [
+       850.1,
+       619.1,
+       29.2
+      ],
+      [
+       850.1,
+       619.1,
+       30.2
+      ],
+      [
+       850.1,
+       619.1,
+       31.2
+      ],
+      [
+       850.1,
+       619.1,
+       32.2
+      ],
+      [
+       850.1,
+       619.1,
+       33.2
+      ],
+      [
+       850.1,
+       619.1,
+       34.2
+      ],
+      [
+       850.1,
+       619.1,
+       35.2
+      ],
+      [
+       850.1,
+       619.1,
+       36.2
+      ],
+      [
+       850.1,
+       619.1,
+       37.2
+      ],
+      [
+       850.1,
+       619.1,
+       38.2
+      ],
+      [
+       850.1,
+       619.1,
+       39.2
+      ],
+      [
+       850.1,
+       619.1,
+       40.2
+      ],
+      [
+       850.1,
+       619.1,
+       41.2
+      ],
+      [
+       850.1,
+       619.1,
+       42.2
+      ],
+      [
+       850.1,
+       619.1,
+       43.2
+      ],
+      [
+       850.1,
+       619.1,
+       44.2
+      ],
+      [
+       850.1,
+       619.1,
+       45.2
+      ],
+      [
+       850.1,
+       619.1,
+       46.2
+      ],
+      [
+       850.1,
+       619.1,
+       47.2
+      ],
+      [
+       850.1,
+       619.1,
+       48.2
+      ],
+      [
+       850.1,
+       619.1,
+       49.2
+      ],
+      [
+       850.1,
+       619.1,
+       50.2
+      ],
+      [
+       850.1,
+       619.1,
+       51.2
+      ],
+      [
+       850.1,
+       619.1,
+       52.2
+      ],
+      [
+       850.1,
+       619.1,
+       53.2
+      ],
+      [
+       850.1,
+       619.1,
+       54.2
+      ],
+      [
+       850.1,
+       619.1,
+       55.2
+      ],
+      [
+       850.1,
+       619.1,
+       56.2
+      ],
+      [
+       850.1,
+       619.1,
+       57.2
+      ],
+      [
+       850.1,
+       619.1,
+       58.2
+      ],
+      [
+       850.1,
+       619.1,
+       59.2
+      ],
+      [
+       850.1,
+       619.1,
+       60.2
+      ],
+      [
+       850.1,
+       619.1,
+       61.2
+      ],
+      [
+       850.1,
+       619.1,
+       62.2
+      ],
+      [
+       850.1,
+       619.1,
+       63.2
+      ],
+      [
+       850.1,
+       619.1,
+       64.2
+      ],
+      [
+       850.1,
+       619.1,
+       65.2
+      ],
+      [
+       850.1,
+       619.1,
+       66.2
+      ],
+      [
+       850.1,
+       619.1,
+       67.2
+      ],
+      [
+       850.1,
+       619.1,
+       68.2
+      ],
+      [
+       850.1,
+       619.1,
+       69.2
+      ],
+      [
+       850.1,
+       619.1,
+       70.2
+      ],
+      [
+       850.1,
+       619.1,
+       71.2
+      ],
+      [
+       850.1,
+       619.1,
+       72.2
+      ],
+      [
+       850.1,
+       619.1,
+       73.2
+      ],
+      [
+       850.1,
+       619.1,
+       74.2
+      ],
+      [
+       850.1,
+       619.1,
+       75.2
+      ],
+      [
+       850.1,
+       619.1,
+       76.2
+      ],
+      [
+       850.1,
+       619.1,
+       77.2
+      ],
+      [
+       850.1,
+       619.1,
+       78.2
+      ],
+      [
+       850.1,
+       619.1,
+       79.2
+      ],
+      [
+       850.1,
+       619.1,
+       80.2
+      ],
+      [
+       850.1,
+       619.1,
+       81.2
+      ],
+      [
+       850.1,
+       619.1,
+       82.2
+      ],
+      [
+       850.1,
+       619.1,
+       83.2
+      ],
+      [
+       850.1,
+       619.1,
+       84.2
+      ],
+      [
+       850.1,
+       619.1,
+       85.2
+      ],
+      [
+       850.1,
+       619.1,
+       86.2
+      ],
+      [
+       850.1,
+       619.1,
+       87.2
+      ],
+      [
+       850.1,
+       619.1,
+       88.2
+      ],
+      [
+       850.1,
+       619.1,
+       89.2
+      ],
+      [
+       850.1,
+       619.1,
+       90.2
+      ],
+      [
+       850.1,
+       619.1,
+       91.2
+      ],
+      [
+       850.1,
+       619.1,
+       92.2
+      ],
+      [
+       850.1,
+       619.1,
+       93.2
+      ],
+      [
+       850.1,
+       619.1,
+       94.2
+      ],
+      [
+       850.1,
+       619.1,
+       95.2
+      ],
+      [
+       850.1,
+       619.1,
+       96.2
+      ],
+      [
+       850.1,
+       619.1,
+       97.2
+      ],
+      [
+       850.1,
+       619.1,
+       98.2
+      ],
+      [
+       850.1,
+       619.1,
+       99.2
+      ],
+      [
+       850.1,
+       619.1,
+       100.2
+      ],
+      [
+       850.1,
+       619.1,
+       101.2
+      ],
+      [
+       850.1,
+       619.1,
+       102.2
+      ],
+      [
+       850.1,
+       619.1,
+       103.2
+      ],
+      [
+       850.1,
+       619.1,
+       104.2
+      ],
+      [
+       850.1,
+       619.1,
+       105.2
+      ],
+      [
+       850.1,
+       619.1,
+       106.2
+      ],
+      [
+       850.1,
+       619.1,
+       107.2
+      ],
+      [
+       850.1,
+       619.1,
+       108.2
+      ],
+      [
+       850.1,
+       619.1,
+       109.2
+      ],
+      [
+       850.1,
+       619.1,
+       110.2
+      ],
+      [
+       850.1,
+       619.1,
+       111.2
+      ],
+      [
+       850.1,
+       619.1,
+       112.2
+      ],
+      [
+       850.1,
+       619.1,
+       113.2
+      ],
+      [
+       850.1,
+       619.1,
+       114.2
+      ],
+      [
+       850.1,
+       619.1,
+       115.2
+      ],
+      [
+       850.1,
+       619.1,
+       116.2
+      ],
+      [
+       850.1,
+       619.1,
+       117.2
+      ],
+      [
+       850.1,
+       619.1,
+       118.2
+      ],
+      [
+       850.1,
+       619.1,
+       119.2
+      ],
+      [
+       850.1,
+       619.1,
+       120.2
+      ],
+      [
+       850.1,
+       619.1,
+       121.2
+      ],
+      [
+       850.1,
+       619.1,
+       122.2
+      ],
+      [
+       850.1,
+       619.1,
+       123.2
+      ],
+      [
+       850.1,
+       619.1,
+       124.2
+      ],
+      [
+       850.1,
+       619.1,
+       125.2
+      ],
+      [
+       850.1,
+       619.1,
+       126.2
+      ],
+      [
+       850.1,
+       619.1,
+       127.2
+      ],
+      [
+       850.1,
+       619.1,
+       128.2
+      ],
+      [
+       850.1,
+       619.1,
+       129.2
+      ],
+      [
+       850.1,
+       619.1,
+       130.2
+      ],
+      [
+       850.1,
+       619.1,
+       131.2
+      ],
+      [
+       850.1,
+       619.1,
+       132.2
+      ],
+      [
+       850.1,
+       619.1,
+       133.2
+      ],
+      [
+       850.1,
+       619.1,
+       134.2
+      ],
+      [
+       850.1,
+       619.1,
+       135.2
+      ],
+      [
+       850.1,
+       619.1,
+       136.2
+      ],
+      [
+       850.1,
+       619.1,
+       137.2
+      ],
+      [
+       850.1,
+       619.1,
+       138.2
+      ],
+      [
+       850.1,
+       619.1,
+       139.2
+      ],
+      [
+       850.1,
+       619.1,
+       140.2
+      ],
+      [
+       850.1,
+       619.1,
+       141.2
+      ],
+      [
+       850.1,
+       619.1,
+       142.2
+      ],
+      [
+       850.1,
+       619.1,
+       143.2
+      ],
+      [
+       850.1,
+       619.1,
+       144.2
+      ],
+      [
+       850.1,
+       619.1,
+       145.2
+      ],
+      [
+       850.1,
+       619.1,
+       146.2
+      ],
+      [
+       850.1,
+       619.1,
+       147.2
+      ],
+      [
+       850.1,
+       619.1,
+       148.2
+      ],
+      [
+       850.1,
+       619.1,
+       149.2
+      ],
+      [
+       850.1,
+       619.1,
+       150.2
+      ],
+      [
+       850.1,
+       619.1,
+       151.2
+      ],
+      [
+       850.1,
+       619.1,
+       152.2
+      ],
+      [
+       850.1,
+       619.1,
+       153.2
+      ],
+      [
+       850.1,
+       619.1,
+       154.2
+      ],
+      [
+       850.1,
+       619.1,
+       155.2
+      ],
+      [
+       850.1,
+       619.1,
+       156.2
+      ],
+      [
+       850.1,
+       619.1,
+       157.2
+      ],
+      [
+       850.1,
+       619.1,
+       158.2
+      ],
+      [
+       850.1,
+       619.1,
+       159.2
+      ],
+      [
+       850.1,
+       619.1,
+       160.2
+      ],
+      [
+       850.1,
+       619.1,
+       161.2
+      ],
+      [
+       850.1,
+       619.1,
+       162.2
+      ],
+      [
+       850.1,
+       619.1,
+       163.2
+      ],
+      [
+       850.1,
+       619.1,
+       164.2
+      ],
+      [
+       850.1,
+       619.1,
+       165.2
+      ],
+      [
+       850.1,
+       619.1,
+       166.2
+      ],
+      [
+       850.1,
+       619.1,
+       167.2
+      ],
+      [
+       850.1,
+       619.1,
+       168.2
+      ],
+      [
+       850.1,
+       619.1,
+       169.2
+      ],
+      [
+       850.1,
+       619.1,
+       170.2
+      ],
+      [
+       850.1,
+       619.1,
+       171.2
+      ],
+      [
+       850.1,
+       619.1,
+       172.2
+      ],
+      [
+       850.1,
+       619.1,
+       173.2
+      ],
+      [
+       850.1,
+       619.1,
+       174.2
+      ],
+      [
+       850.1,
+       619.1,
+       175.2
+      ],
+      [
+       850.1,
+       619.1,
+       176.2
+      ],
+      [
+       850.1,
+       619.1,
+       177.2
+      ],
+      [
+       850.1,
+       619.1,
+       178.2
+      ],
+      [
+       850.1,
+       619.1,
+       179.2
+      ],
+      [
+       850.1,
+       619.1,
+       180.2
+      ],
+      [
+       850.1,
+       619.1,
+       180.2
+      ]
+     ]
+    },
+    "predicted_end_pose": [
+     850.1,
+     619.1,
+     180.2
+    ],
+    "predicted_path": [
+     [
+      850.1,
+      619.1
+     ],
+     [
+      850.1,
+      619.1
+     ]
+    ],
+    "e_pos_mm": 8.4,
+    "e_theta_deg": 0.8,
+    "planner_latency_s": 0.0,
+    "drive_time_s": 2.8,
+    "nacks": [],
+    "verifier": {
+     "success": true,
+     "message": "The rover turned approximately 180\u00b0 and remains safely within the arena.",
+     "latency_s": 2.319,
+     "has_correction": false,
+     "agrees_with_rule": true
+    }
+   }
+  ]
+ }
+}

@@ -1,0 +1,36 @@
+{
+  "task_id": "RDT-05",
+  "title": "Detour around one obstacle",
+  "family": "single_obstacle",
+  "difficulty": 2,
+  "instruction": "Drive to coordinate (1400 mm, 620 mm) while avoiding the red block, then stop.",
+  "start_pose": {
+    "x_mm": 300,
+    "y_mm": 620,
+    "heading_deg": 90
+  },
+  "blocks": [
+    {
+      "colour": "red",
+      "x_mm": 855,
+      "y_mm": 620,
+      "length_mm": 280.0,
+      "breadth_mm": 200.0,
+      "orientation_deg": 0
+    }
+  ],
+  "goal": {
+    "type": "absolute",
+    "x_mm": 1400,
+    "y_mm": 620,
+    "position_tolerance_mm": 75,
+    "require_heading": false,
+    "target_heading_deg": 0.0,
+    "heading_tolerance_deg": 10.0
+  },
+  "arena_mm": [
+    1710.0,
+    1254.0
+  ],
+  "notes": ""
+}

@@ -1,0 +1,37 @@
+{
+  "task_id": "RDT-04",
+  "title": "Stop at a position relative to a block",
+  "family": "object_target",
+  "difficulty": 2,
+  "instruction": "Stop with the rover centre 350 mm directly south of the blue block centre.",
+  "start_pose": {
+    "x_mm": 350,
+    "y_mm": 300,
+    "heading_deg": 0
+  },
+  "blocks": [
+    {
+      "colour": "blue",
+      "x_mm": 1100,
+      "y_mm": 800,
+      "length_mm": 280.0,
+      "breadth_mm": 200.0,
+      "orientation_deg": 90
+    }
+  ],
+  "goal": {
+    "type": "block_offset",
+    "block_colour": "blue",
+    "dx_mm": 0,
+    "dy_mm": -350,
+    "position_tolerance_mm": 60,
+    "require_heading": false,
+    "target_heading_deg": 0.0,
+    "heading_tolerance_deg": 10.0
+  },
+  "arena_mm": [
+    1710.0,
+    1254.0
+  ],
+  "notes": ""
+}

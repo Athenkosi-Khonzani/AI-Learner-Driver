@@ -1,0 +1,8 @@
+{
+  "replay_ok_rover_ok": 17,
+  "replay_ok_rover_fail": 9,
+  "replay_fail_rover_ok": 0,
+  "replay_fail_rover_fail": 0,
+  "discordant": 9,
+  "exact_mcnemar_p": 0.0039
+}
